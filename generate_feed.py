@@ -1,20 +1,27 @@
 import datetime
-from curl_cffi import requests
+import requests
 from bs4 import BeautifulSoup
 from feedgen.feed import FeedGenerator
 
-URL = "https://www.financialexpress.com/latest-news/"
+# Route via reader proxy to bypass Cloudflare datacenter IP blocks on GitHub Actions runners
+PROXY_URL = "https://r.jina.ai/https://www.financialexpress.com/latest-news/"
+BASE_URL = "https://www.financialexpress.com/latest-news/"
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+    "X-Return-Format": "html",
+    "Accept": "text/html"
+}
 
 def main():
-    # Impersonate modern Chrome to clear Cloudflare checks on datacenter IPs
-    r = requests.get(URL, impersonate="chrome124", timeout=20)
-    r.raise_for_status()
-    soup = BeautifulSoup(r.text, "html.parser")
+    res = requests.get(PROXY_URL, headers=HEADERS, timeout=30)
+    res.raise_for_status()
+    soup = BeautifulSoup(res.text, "html.parser")
 
     fg = FeedGenerator()
-    fg.id(URL)
+    fg.id(BASE_URL)
     fg.title("Financial Express - Latest News")
-    fg.link(href=URL, rel="alternate")
+    fg.link(href=BASE_URL, rel="alternate")
     fg.description("Latest news stories from Financial Express.")
     fg.language("en")
     fg.lastBuildDate(datetime.datetime.now(datetime.timezone.utc))

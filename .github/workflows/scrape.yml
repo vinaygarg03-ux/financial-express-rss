@@ -33,7 +33,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install curl_cffi beautifulsoup4 feedgen
+          pip install requests beautifulsoup4 feedgen
 
       - name: Generate RSS Feed
         run: |
