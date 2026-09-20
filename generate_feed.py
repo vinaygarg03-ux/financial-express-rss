@@ -1,96 +1,99 @@
 import datetime
+import email.utils
 import html
+import time
+import xml.etree.ElementTree as ET
+from xml.dom import minidom
 import requests
 from bs4 import BeautifulSoup
-from feedgen.feed import FeedGenerator
 
-TARGET_URL = "https://www.financialexpress.com/latest-news/"
-# Route through Google's official translate mirror to access the page via Google crawler IPs
-PROXY_URL = "https://www-financialexpress-com.translate.goog/latest-news/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en"
+WORKER_URL = "https://quiet-salad-e40e.vinay-garg03.workers.dev/"
+SITE_URL = "https://www.financialexpress.com/latest-news/"
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
-}
-
-def clean_url(url):
-    """Strip Google Translate tracking parameters and restore original URL."""
-    if not url:
+def clean_html(raw_html):
+    if not raw_html:
         return ""
-    if "_x_tr" in url:
-        url = url.split("?")[0].replace("-translate-goog", "").replace("www-financialexpress-com", "www.financialexpress.com")
-    if url.startswith("https://www.google.com/url?q="):
-        url = url.split("https://www.google.com/url?q=")[1].split("&")[0]
-    return url
+    soup = BeautifulSoup(raw_html, "html.parser")
+    return html.unescape(soup.get_text(strip=True))
+
+def parse_date(date_str):
+    if not date_str:
+        return datetime.datetime.now(datetime.timezone.utc)
+    try:
+        clean = date_str.replace("Z", "")
+        dt = datetime.datetime.fromisoformat(clean)
+        return dt.replace(tzinfo=datetime.timezone.utc)
+    except Exception:
+        return datetime.datetime.now(datetime.timezone.utc)
 
 def main():
-    print("Fetching via Google Proxy Mirror...")
-    res = requests.get(PROXY_URL, headers=HEADERS, timeout=25)
-    res.raise_for_status()
-    
-    soup = BeautifulSoup(res.text, "html.parser")
+    ts = int(time.time())
+    request_url = f"{WORKER_URL}?t={ts}"
+    print(f"Fetching live articles: {request_url}")
 
-    fg = FeedGenerator()
-    fg.id(TARGET_URL)
-    fg.title("Financial Express - Latest News")
-    fg.link(href=TARGET_URL, rel="alternate")
-    fg.description("Real-time breaking news from Financial Express.")
-    fg.language("en")
-    fg.lastBuildDate(datetime.datetime.now(datetime.timezone.utc))
+    res = requests.get(request_url, timeout=25)
+    res.raise_for_status()
+
+    posts = res.json()
+    if not isinstance(posts, list) or len(posts) == 0:
+        raise RuntimeError("Worker did not return a valid list of posts.")
 
     seen = set()
-    count = 0
+    valid_posts = []
 
-    for div in soup.select("div.entry-title"):
-        a = div.find("a")
-        if not a or not a.get("href"):
+    for post in posts:
+        link = post.get("link", "").strip()
+        raw_title = post.get("title", {}).get("rendered", "")
+        title = clean_html(raw_title)
+
+        if not title or not link or link in seen:
             continue
-
-        raw_link = a.get("href").strip()
-        link = clean_url(raw_link)
-        title = a.get_text(strip=True)
-
-        if not title or link in seen:
-            continue
-
-        if link.startswith("/"):
-            link = "https://www.financialexpress.com" + link
-
         seen.add(link)
-        count += 1
 
-        article = div.find_parent("article")
-        desc = title
-        pub_date = None
+        raw_excerpt = post.get("excerpt", {}).get("rendered", "")
+        desc = clean_html(raw_excerpt) if raw_excerpt else title
 
-        if article:
-            summary = article.select_one("p, .entry-summary, .post-excerpt")
-            if summary and summary.get_text(strip=True):
-                desc = summary.get_text(strip=True)
+        # Financial Express date_gmt is in UTC
+        raw_date = post.get("date_gmt") or post.get("date") or ""
+        pub_date = parse_date(raw_date)
 
-            time_tag = article.find("time")
-            if time_tag and time_tag.get("datetime"):
-                try:
-                    pub_date = datetime.datetime.fromisoformat(time_tag.get("datetime").replace("Z", "+00:00"))
-                except ValueError:
-                    pub_date = datetime.datetime.now(datetime.timezone.utc)
+        valid_posts.append({
+            "id": link,
+            "title": title,
+            "link": link,
+            "description": desc,
+            "pubDate": pub_date
+        })
 
-        if not pub_date:
-            pub_date = datetime.datetime.now(datetime.timezone.utc)
+    # Sort strictly: largest timestamp (latest published) at index 0
+    valid_posts.sort(key=lambda x: x["pubDate"], reverse=True)
 
-        fe = fg.add_entry()
-        fe.id(link)
-        fe.title(title)
-        fe.link(href=link)
-        fe.description(desc)
-        fe.pubDate(pub_date)
+    # Build standard RSS 2.0 XML
+    rss = ET.Element("rss", version="2.0")
+    channel = ET.SubElement(rss, "channel")
 
-    if count == 0:
-        print("ERROR: Scraped 0 items. Target structure changed.")
-        exit(1)
+    ET.SubElement(channel, "title").text = "Financial Express - Latest News"
+    ET.SubElement(channel, "link").text = SITE_URL
+    ET.SubElement(channel, "description").text = "Real-time breaking business and financial news."
+    ET.SubElement(channel, "language").text = "en"
+    ET.SubElement(channel, "lastBuildDate").text = email.utils.format_datetime(datetime.datetime.now(datetime.timezone.utc))
 
-    fg.rss_file("feed.xml", pretty=True)
-    print(f"SUCCESS: Generated feed.xml with {count} items.")
+    for post in valid_posts:
+        item = ET.SubElement(channel, "item")
+        ET.SubElement(item, "title").text = post["title"]
+        ET.SubElement(item, "link").text = post["link"]
+        ET.SubElement(item, "guid").text = post["link"]
+        ET.SubElement(item, "description").text = post["description"]
+        ET.SubElement(item, "pubDate").text = email.utils.format_datetime(post["pubDate"])
+
+    # Format pretty XML
+    xml_str = ET.tostring(rss, encoding="utf-8")
+    pretty_xml = minidom.parseString(xml_str).toprettyxml(indent="  ", encoding="utf-8")
+
+    with open("feed.xml", "wb") as f:
+        f.write(pretty_xml)
+
+    print(f"SUCCESS: Generated feed.xml with {len(valid_posts)} articles sorted newest first.")
 
 if __name__ == "__main__":
     main()
