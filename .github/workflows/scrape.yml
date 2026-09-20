@@ -1,0 +1,61 @@
+name: Update and Deploy RSS Feed
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          pip install requests beautifulsoup4 feedgen
+
+      - name: Generate RSS Feed
+        run: |
+          python generate_feed.py
+
+      - name: Commit and Push Updated Feed to Repo
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add feed.xml
+          git diff --staged --quiet || (git commit -m "Auto-update feed.xml" && git push)
+
+      - name: Prepare Pages Artifact
+        run: |
+          mkdir -p _site
+          cp feed.xml _site/
+          # Optional copy of index.html if it exists
+          [ -f index.html ] && cp index.html _site/ || true
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
