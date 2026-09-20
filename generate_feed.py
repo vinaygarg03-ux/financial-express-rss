@@ -1,78 +1,72 @@
 import datetime
 import requests
-from bs4 import BeautifulSoup
+import xml.etree.ElementTree as ET
 from feedgen.feed import FeedGenerator
 
-# Route via reader proxy to bypass Cloudflare datacenter IP blocks on GitHub Actions runners
-PROXY_URL = "https://r.jina.ai/https://www.financialexpress.com/latest-news/"
-BASE_URL = "https://www.financialexpress.com/latest-news/"
+FEED_SOURCE = "https://news.google.com/rss/search?q=site:financialexpress.com&hl=en-IN&gl=IN&ceid=IN:en"
+TARGET_URL = "https://www.financialexpress.com/latest-news/"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-    "X-Return-Format": "html",
-    "Accept": "text/html"
+    "Accept": "application/rss+xml, application/xml, text/xml"
 }
 
 def main():
-    res = requests.get(PROXY_URL, headers=HEADERS, timeout=30)
+    res = requests.get(FEED_SOURCE, headers=HEADERS, timeout=20)
     res.raise_for_status()
-    soup = BeautifulSoup(res.text, "html.parser")
+
+    root = ET.fromstring(res.content)
+    channel = root.find("channel")
 
     fg = FeedGenerator()
-    fg.id(BASE_URL)
+    fg.id(TARGET_URL)
     fg.title("Financial Express - Latest News")
-    fg.link(href=BASE_URL, rel="alternate")
+    fg.link(href=TARGET_URL, rel="alternate")
     fg.description("Latest news stories from Financial Express.")
     fg.language("en")
     fg.lastBuildDate(datetime.datetime.now(datetime.timezone.utc))
 
-    seen = set()
+    items = channel.findall("item") if channel is not None else []
     count = 0
 
-    for div in soup.select("div.entry-title"):
-        a = div.find("a")
-        if not a or not a.get("href"):
+    for item in items[:25]:
+        title_el = item.find("title")
+        link_el = item.find("link")
+        desc_el = item.find("description")
+        pub_el = item.find("pubDate")
+
+        if title_el is None or not title_el.text:
             continue
-        link = a.get("href").strip()
-        title = a.get_text(strip=True)
 
-        if not title or link in seen:
-            continue
+        raw_title = title_el.text.strip()
+        # Clean title by removing source suffix if appended by Google News
+        if " - Financial Express" in raw_title:
+            raw_title = raw_title.replace(" - Financial Express", "").strip()
 
-        if link.startswith("/"):
-            link = "https://www.financialexpress.com" + link
+        link = link_el.text.strip() if link_el is not None and link_el.text else TARGET_URL
+        desc = desc_el.text.strip() if desc_el is not None and desc_el.text else raw_title
 
-        seen.add(link)
-        count += 1
-
-        article = div.find_parent("article")
-        desc = title
         pub_date = None
-
-        if article:
-            summary = article.select_one("p, .entry-summary, .post-excerpt")
-            if summary and summary.get_text(strip=True):
-                desc = summary.get_text(strip=True)
-
-            time_tag = article.find("time")
-            if time_tag and time_tag.get("datetime"):
-                try:
-                    pub_date = datetime.datetime.fromisoformat(time_tag.get("datetime").replace("Z", "+00:00"))
-                except ValueError:
-                    pub_date = datetime.datetime.now(datetime.timezone.utc)
+        if pub_el is not None and pub_el.text:
+            try:
+                # Parse RFC 822 format (e.g., "Sun, 20 Sep 2026 10:15:00 GMT")
+                pub_date = datetime.datetime.strptime(pub_el.text.strip(), "%a, %d %b %Y %H:%M:%S %Z").replace(tzinfo=datetime.timezone.utc)
+            except Exception:
+                pub_date = datetime.datetime.now(datetime.timezone.utc)
 
         if not pub_date:
             pub_date = datetime.datetime.now(datetime.timezone.utc)
 
         fe = fg.add_entry()
         fe.id(link)
-        fe.title(title)
+        fe.title(raw_title)
         fe.link(href=link)
         fe.description(desc)
         fe.pubDate(pub_date)
+        count += 1
 
     fg.rss_file("feed.xml", pretty=True)
-    print(f"Generated feed.xml with {count} items.")
+    print(f"SUCCESS: Generated feed.xml with {count} items from syndicated stream.")
 
 if __name__ == "__main__":
     main()
