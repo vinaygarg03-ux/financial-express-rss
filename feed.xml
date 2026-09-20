@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>Financial Express - Latest News</title>
+    <link>https://www.financialexpress.com/latest-news/</link>
+    <description>Latest news and real-time updates from Financial Express.</description>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>python-feedgen</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 20 Sep 2026 05:07:04 +0000</lastBuildDate>
+    <item>
+      <title>Don’t sip that tea very hot</title>
+      <link>https://www.financialexpress.com/life/lifestyle/dont-sip-that-tea-very-hot/4343087/</link>
+      <description>Don’t sip that tea very hot</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/dont-sip-that-tea-very-hot/4343087/</guid>
+      <pubDate>Sun, 20 Sep 2026 05:07:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>What sustainable events actually cost: Lessons from the front lines</title>
+      <link>https://www.financialexpress.com/life/lifestyle/what-sustainable-events-actually-cost-lessons-from-the-front-lines/4343093/</link>
+      <description>What sustainable events actually cost: Lessons from the front lines</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/what-sustainable-events-actually-cost-lessons-from-the-front-lines/4343093/</guid>
+      <pubDate>Sun, 20 Sep 2026 05:07:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>A holiday that needs no planning</title>
+      <link>https://www.financialexpress.com/life/lifestyle/a-holiday-that-needs-no-planning/4343097/</link>
+      <description>A holiday that needs no planning</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/a-holiday-that-needs-no-planning/4343097/</guid>
+      <pubDate>Sun, 20 Sep 2026 05:07:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Asian burger: It’s more a format than a fixed recipe</title>
+      <link>https://www.financialexpress.com/life/lifestyle/the-asian-burger-its-more-a-format-than-a-fixed-recipe/4343103/</link>
+      <description>The Asian burger: It’s more a format than a fixed recipe</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/the-asian-burger-its-more-a-format-than-a-fixed-recipe/4343103/</guid>
+      <pubDate>Sun, 20 Sep 2026 05:07:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>Cultural calendar: Art exhibitions, stand-up comedy, and symphonic shows across India</title>
+      <link>https://www.financialexpress.com/life/lifestyle/cultural-calendar-art-exhibitions-stand-up-comedy-and-symphonic-shows-across-india/4343107/</link>
+      <description>Cultural calendar: Art exhibitions, stand-up comedy, and symphonic shows across India</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/cultural-calendar-art-exhibitions-stand-up-comedy-and-symphonic-shows-across-india/4343107/</guid>
+      <pubDate>Sun, 20 Sep 2026 05:07:06 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
