@@ -1,33 +1,31 @@
 import datetime
 import html
-import requests
+from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 from feedgen.feed import FeedGenerator
 
-# Fetch 50 items so both sidebar stream and main stream are fully populated
-API_URL = "https://www.financialexpress.com/wp-json/wp/v2/posts?per_page=50&_fields=id,date_gmt,link,title,excerpt,categories"
-SITE_URL = "https://www.financialexpress.com/latest-news/"
-
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-    "Accept": "application/json"
-}
-
-def clean_html(raw_html):
-    if not raw_html:
-        return ""
-    soup = BeautifulSoup(raw_html, "html.parser")
-    return html.unescape(soup.get_text(strip=True))
+TARGET_URL = "https://www.financialexpress.com/latest-news/"
 
 def main():
-    res = requests.get(API_URL, headers=HEADERS, timeout=20)
-    res.raise_for_status()
-    posts = res.json()
+    print("Launching headless browser...")
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+        )
+        page = context.new_page()
+        # Navigate to target page and wait for DOM content
+        page.goto(TARGET_URL, wait_until="domcontentloaded", timeout=45000)
+        page.wait_for_timeout(3000)
+        content = page.content()
+        browser.close()
+
+    soup = BeautifulSoup(content, "html.parser")
 
     fg = FeedGenerator()
-    fg.id(SITE_URL)
+    fg.id(TARGET_URL)
     fg.title("Financial Express - Latest News")
-    fg.link(href=SITE_URL, rel="alternate")
+    fg.link(href=TARGET_URL, rel="alternate")
     fg.description("Real-time breaking news from Financial Express.")
     fg.language("en")
     fg.lastBuildDate(datetime.datetime.now(datetime.timezone.utc))
@@ -35,25 +33,39 @@ def main():
     seen = set()
     count = 0
 
-    for post in posts:
-        link = post.get("link", "").strip()
-        raw_title = post.get("title", {}).get("rendered", "")
-        title = clean_html(raw_title)
-
-        if not title or not link or link in seen:
+    for div in soup.select("div.entry-title"):
+        a = div.find("a")
+        if not a or not a.get("href"):
             continue
+
+        link = a.get("href").strip()
+        title = a.get_text(strip=True)
+
+        if not title or link in seen:
+            continue
+
+        if link.startswith("/"):
+            link = "https://www.financialexpress.com" + link
+
         seen.add(link)
+        count += 1
 
-        raw_excerpt = post.get("excerpt", {}).get("rendered", "")
-        desc = clean_html(raw_excerpt) if raw_excerpt else title
-
-        date_str = post.get("date_gmt", "")
+        article = div.find_parent("article")
+        desc = title
         pub_date = None
-        if date_str:
-            try:
-                pub_date = datetime.datetime.fromisoformat(date_str).replace(tzinfo=datetime.timezone.utc)
-            except Exception:
-                pub_date = datetime.datetime.now(datetime.timezone.utc)
+
+        if article:
+            summary = article.select_one("p, .entry-summary, .post-excerpt")
+            if summary and summary.get_text(strip=True):
+                desc = summary.get_text(strip=True)
+
+            time_tag = article.find("time")
+            if time_tag and time_tag.get("datetime"):
+                try:
+                    pub_date = datetime.datetime.fromisoformat(time_tag.get("datetime").replace("Z", "+00:00"))
+                except ValueError:
+                    pub_date = datetime.datetime.now(datetime.timezone.utc)
+
         if not pub_date:
             pub_date = datetime.datetime.now(datetime.timezone.utc)
 
@@ -63,10 +75,9 @@ def main():
         fe.link(href=link)
         fe.description(desc)
         fe.pubDate(pub_date)
-        count += 1
 
     fg.rss_file("feed.xml", pretty=True)
-    print(f"SUCCESS: Generated feed.xml with {count} items.")
+    print(f"SUCCESS: Generated feed.xml with {count} live articles via Playwright.")
 
 if __name__ == "__main__":
     main()
