@@ -1,18 +1,13 @@
 import datetime
-import requests
+from curl_cffi import requests
 from bs4 import BeautifulSoup
 from feedgen.feed import FeedGenerator
 
 URL = "https://www.financialexpress.com/latest-news/"
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Cache-Control": "no-cache",
-    "Pragma": "no-cache"
-}
 
 def main():
-    r = requests.get(URL, headers=HEADERS, timeout=15)
+    # Impersonate modern Chrome to clear Cloudflare checks on datacenter IPs
+    r = requests.get(URL, impersonate="chrome124", timeout=20)
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
 
@@ -70,7 +65,7 @@ def main():
         fe.pubDate(pub_date)
 
     fg.rss_file("feed.xml", pretty=True)
-    print(f"Generated feed.xml with {count} items in correct chronological order.")
+    print(f"Generated feed.xml with {count} items.")
 
 if __name__ == "__main__":
     main()
