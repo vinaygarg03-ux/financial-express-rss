@@ -1,5 +1,4 @@
 import datetime
-import time
 import requests
 from bs4 import BeautifulSoup
 from feedgen.feed import FeedGenerator
@@ -13,7 +12,7 @@ HEADERS = {
         "Chrome/124.0.0.0 Safari/537.36"
     ),
     "Accept-Language": "en-US,en;q=0.9",
-    "Cache-Control": "no-cache, no-store, must-revalidate",
+    "Cache-Control": "no-cache",
     "Pragma": "no-cache",
 }
 
@@ -26,11 +25,8 @@ def build_rss_feed():
     fg.description("Latest news stories from Financial Express main feed.")
     fg.language("en")
 
-    # Add timestamp parameter to bypass server/CDN caching
-    cache_buster_url = f"{BASE_URL}?_cb={int(time.time())}"
-
     try:
-        response = requests.get(cache_buster_url, headers=HEADERS, timeout=15)
+        response = requests.get(BASE_URL, headers=HEADERS, timeout=15)
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         print(f"Error fetching URL: {e}")
@@ -89,7 +85,7 @@ def build_rss_feed():
         fe.pubDate(pub_date)
 
     fg.rss_file("feed.xml", pretty=True)
-    print(f"Successfully generated feed.xml with {items_count} main feed stories.")
+    print(f"Done! Created feed.xml with {items_count} live stories.")
 
 if __name__ == "__main__":
     build_rss_feed()
