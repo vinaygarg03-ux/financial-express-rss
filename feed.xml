@@ -3,143 +3,360 @@
   <channel>
     <title>Financial Express - Latest News</title>
     <link>https://www.financialexpress.com/latest-news/</link>
-    <description>Latest news stories from Financial Express.</description>
+    <description>Real-time breaking news from Financial Express.</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Sep 2026 11:41:43 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 11:59:32 +0000</lastBuildDate>
+    <item>
+      <title>Mumbai train alert: Thane-Kalyan mega block on Sep 20; check affected trains, timings</title>
+      <link>https://www.financialexpress.com/business/railways-mumbai-train-alert-thane-kalyan-mega-block-on-sep-20-check-affected-trains-timings-4343004/</link>
+      <description>Passengers on select Mail and Express trains through Mumbai on September 20, 2026, should check timetables due to a four-hour mega block between Thane and Kalyan causing 10-15 minute delays and diversions.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/business/railways-mumbai-train-alert-thane-kalyan-mega-block-on-sep-20-check-affected-trains-timings-4343004/</guid>
+      <pubDate>Sat, 19 Sep 2026 13:28:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>Welcoming global art to Indian galleries</title>
+      <link>https://www.financialexpress.com/life/lifestyle/welcoming-global-art-to-indian-galleries/4343007/</link>
+      <description>There is a noticeable rise in international exhibitions, artwork loans &amp; institutional collaborations happening in India</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/welcoming-global-art-to-indian-galleries/4343007/</guid>
+      <pubDate>Sat, 19 Sep 2026 13:32:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>Metal &amp; memory: Jenjum Gadi on art, identity and the past</title>
+      <link>https://www.financialexpress.com/life/lifestyle/metal-amp-memory-jenjum-gadi-on-art-identity-and-the-past/4343019/</link>
+      <description>How this artist is giving his disappearing village a permanent art form through brass sculptures</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/metal-amp-memory-jenjum-gadi-on-art-identity-and-the-past/4343019/</guid>
+      <pubDate>Sat, 19 Sep 2026 13:48:41 +0000</pubDate>
+    </item>
+    <item>
+      <title>‘We do not operate under pressure’: India on Trump’s Russia sanctions bill</title>
+      <link>https://www.financialexpress.com/india-news/we-do-not-operate-under-pressure-india-on-trumps-russia-sanctions-bill/4343009/</link>
+      <description>India will maintain an independent foreign policy focused on national interests amid US sanctions on Russia and Iran. India prioritizes energy security and economic viability despite US tariff threats.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/india-news/we-do-not-operate-under-pressure-india-on-trumps-russia-sanctions-bill/4343009/</guid>
+      <pubDate>Sat, 19 Sep 2026 13:57:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>Screen time: From “The Paradise” to “Shaque” and more</title>
+      <link>https://www.financialexpress.com/life/lifestyle/screen-time-from-the-paradise-to-shaque-and-more/4343031/</link>
+      <description>Your entertainment bucket list for this week</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/screen-time-from-the-paradise-to-shaque-and-more/4343031/</guid>
+      <pubDate>Sat, 19 Sep 2026 14:01:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>Delhi Airport’s third runway reopens Sept 20: What has changed on Runway 11R/29L</title>
+      <link>https://www.financialexpress.com/business/airlines-aviation/delhi-airports-third-runway-reopens-sept-20-what-has-changed-on-runway-11r29l/4343020/</link>
+      <description>The changes are expected to reduce runway occupancy time and strengthen operational reliability during varying weather conditions.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/business/airlines-aviation/delhi-airports-third-runway-reopens-sept-20-what-has-changed-on-runway-11r29l/4343020/</guid>
+      <pubDate>Sat, 19 Sep 2026 14:12:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>Sliding into silence</title>
+      <link>https://www.financialexpress.com/life/lifestyle/sliding-into-silence/4343039/</link>
+      <description>As words fade from our dictionaries, are everyday conversations disappearing as well?</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/sliding-into-silence/4343039/</guid>
+      <pubDate>Sat, 19 Sep 2026 14:19:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>Staying cool on the go</title>
+      <link>https://www.financialexpress.com/life/lifestyle/staying-cool-on-the-go/4343047/</link>
+      <description>From air-con jackets to UV-blocking parasols, how wearable cooling devices are changing the definition of summer comfort</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/staying-cool-on-the-go/4343047/</guid>
+      <pubDate>Sat, 19 Sep 2026 14:31:09 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI Tracker: From smart packaging to AI travel agents</title>
+      <link>https://www.financialexpress.com/life/technology/ai-tracker-from-smart-packaging-to-ai-travel-agents/4343059/</link>
+      <description>Discover how artificial intelligence and robotics are transforming global industries—from intelligent food packaging and generative AI desserts to Agility Robotics’ Digit 5 humanoid and Bangladesh’s smart garment factories.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/technology/ai-tracker-from-smart-packaging-to-ai-travel-agents/4343059/</guid>
+      <pubDate>Sat, 19 Sep 2026 14:59:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>8% DA hike in Punjab: Who benefits, when payments start and what about Rs 14,191 cr arrears?</title>
+      <link>https://www.financialexpress.com/money/8-da-hike-in-punjab-who-benefits-when-payments-start-and-what-about-rs-14191-cr-arrears-4343002/</link>
+      <description>The DA increase will be released in two installments of four percentage points each. The increase takes the DA rate to 50% ahead of the festive season.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/money/8-da-hike-in-punjab-who-benefits-when-payments-start-and-what-about-rs-14191-cr-arrears-4343002/</guid>
+      <pubDate>Sat, 19 Sep 2026 15:11:43 +0000</pubDate>
+    </item>
+    <item>
+      <title>Do supplements really add up?</title>
+      <link>https://www.financialexpress.com/life/lifestyle/do-supplements-really-add-up/4343066/</link>
+      <description>Dietary supplements &amp; nutraceuticals are increasingly lining the shelves of our local stores. But are they as unassuming and healthy as they claim to be?</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/do-supplements-really-add-up/4343066/</guid>
+      <pubDate>Sat, 19 Sep 2026 15:21:30 +0000</pubDate>
+    </item>
+    <item>
+      <title>Don’t sip that tea very hot</title>
+      <link>https://www.financialexpress.com/life/lifestyle/dont-sip-that-tea-very-hot/4343087/</link>
+      <description>Very hot beverages linked with higher risk of esophageal cancer</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/dont-sip-that-tea-very-hot/4343087/</guid>
+      <pubDate>Sat, 19 Sep 2026 15:59:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>What sustainable events actually cost: Lessons from the front lines</title>
+      <link>https://www.financialexpress.com/life/lifestyle/what-sustainable-events-actually-cost-lessons-from-the-front-lines/4343093/</link>
+      <description>The biggest gains often come not from visible gestures such as paper straws, but from decisions about energy, mobility, procurement, catering and waste that can reduce emissions, costs and operational risk at the same time</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/what-sustainable-events-actually-cost-lessons-from-the-front-lines/4343093/</guid>
+      <pubDate>Sat, 19 Sep 2026 16:17:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>A holiday that needs no planning</title>
+      <link>https://www.financialexpress.com/life/lifestyle/a-holiday-that-needs-no-planning/4343097/</link>
+      <description>A retreat that you can choose based on mood, interest, community or even gender, all curated to the last detail</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/a-holiday-that-needs-no-planning/4343097/</guid>
+      <pubDate>Sat, 19 Sep 2026 16:34:31 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Asian burger: It’s more a format than a fixed recipe</title>
+      <link>https://www.financialexpress.com/life/lifestyle/the-asian-burger-its-more-a-format-than-a-fixed-recipe/4343103/</link>
+      <description>From China’s Roujiamo to Japanese rice burgers and Burmese steamed buns, Asia’s love for handheld food has many stories to tell</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/the-asian-burger-its-more-a-format-than-a-fixed-recipe/4343103/</guid>
+      <pubDate>Sat, 19 Sep 2026 16:43:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Cultural calendar: Art exhibitions, stand-up comedy, and symphonic shows across India</title>
+      <link>https://www.financialexpress.com/life/lifestyle/cultural-calendar-art-exhibitions-stand-up-comedy-and-symphonic-shows-across-india/4343107/</link>
+      <description>Explore top cultural events across the country</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/life/lifestyle/cultural-calendar-art-exhibitions-stand-up-comedy-and-symphonic-shows-across-india/4343107/</guid>
+      <pubDate>Sat, 19 Sep 2026 16:56:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>NLMC to monetise land and buildings worth Rs 5,000 crore</title>
+      <link>https://www.financialexpress.com/business/news/nlmc-to-monetise-land-and-buildings-worth-rs-5000-crore/4343113/</link>
+      <description>The National Land Monetisation Corporation (NLMC) has recommended proposals to monetise surplus land and building assets worth over ₹5,000 crore.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/business/news/nlmc-to-monetise-land-and-buildings-worth-rs-5000-crore/4343113/</guid>
+      <pubDate>Sat, 19 Sep 2026 17:12:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>India faces 100% tariff risk under Trump’s new law</title>
+      <link>https://www.financialexpress.com/policy/economy/india-faces-100-tariff-risk-under-trumps-new-law/4343116/</link>
+      <description>Can seek waivers, but firm on energy security</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/policy/economy/india-faces-100-tariff-risk-under-trumps-new-law/4343116/</guid>
+      <pubDate>Sat, 19 Sep 2026 18:07:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>States need to raise capex, attract private investment: V. Anantha Nageswaran</title>
+      <link>https://www.financialexpress.com/policy/economy/states-need-to-raise-capex-attract-private-investment-v-anantha-nageswaran/4343123/</link>
+      <description>Chief Economic Adviser V. Anantha Nageswaran has called on Indian states to boost capital expenditure to 3% of GSDP by 2031-32.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/policy/economy/states-need-to-raise-capex-attract-private-investment-v-anantha-nageswaran/4343123/</guid>
+      <pubDate>Sat, 19 Sep 2026 18:17:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>Stakeholders need to act more responsibly</title>
+      <link>https://www.financialexpress.com/sports/stakeholders-need-to-act-more-responsibly/4343130/</link>
+      <description>The Asia Cup final was a replay of the men’s tourney when India refused to accept the trophy from Pak’s Mohsin Naqvi. Will they wait till a new ACC chief takesover?</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/sports/stakeholders-need-to-act-more-responsibly/4343130/</guid>
+      <pubDate>Sat, 19 Sep 2026 18:33:09 +0000</pubDate>
+    </item>
+    <item>
+      <title>Indian basketball all set to have its IPL moment</title>
+      <link>https://www.financialexpress.com/sports/indian-basketball-all-set-to-have-its-ipl-moment/4343136/</link>
+      <description>New league to be an entertainment product: CEO</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/sports/indian-basketball-all-set-to-have-its-ipl-moment/4343136/</guid>
+      <pubDate>Sat, 19 Sep 2026 18:55:59 +0000</pubDate>
+    </item>
+    <item>
+      <title>Semicon India 2026 draws 50,000 registrations, 600 companies</title>
+      <link>https://www.financialexpress.com/business/news/semicon-india-2026-draws-50000-registrations-600-companies/4343147/</link>
+      <description>Semicon India 2026 concluded with nearly 50,000 registrations and participation from 600 global companies.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/business/news/semicon-india-2026-draws-50000-registrations-600-companies/4343147/</guid>
+      <pubDate>Sat, 19 Sep 2026 19:07:34 +0000</pubDate>
+    </item>
+    <item>
+      <title>Monsoon Tracker: Withdrawal begins with rain deficiency at 15%, IMD indicates continued strengthening of El Nino conditions</title>
+      <link>https://www.financialexpress.com/policy/economy/southwest-monsoon-begins-withdrawal-says-imd/4343150/</link>
+      <description>The India Meteorological Department (IMD) has announced the commencement of the southwest monsoon’s withdrawal from west Rajasthan.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/policy/economy/southwest-monsoon-begins-withdrawal-says-imd/4343150/</guid>
+      <pubDate>Sat, 19 Sep 2026 19:15:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>NEET debate is still wide open</title>
+      <link>https://www.financialexpress.com/opinion/neet-debate-is-still-wide-open/4343127/</link>
+      <description>So far, there have been two strong but competing arguments: should not states be allowed to conduct medical entrance exams and, should not there be a basic minimum national standard for medical school admissions?</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/opinion/neet-debate-is-still-wide-open/4343127/</guid>
+      <pubDate>Sat, 19 Sep 2026 23:42:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>Inside Track by Coomi Kapoor: Uncurated visuals go viral</title>
+      <link>https://www.financialexpress.com/opinion/inside-track-by-coomi-kapoor-uncurated-visuals-go-viral/4343144/</link>
+      <description>The BRICS publicity should have focused on the gains of the Delhi declaration, not trivial memes, on the misguided notion they would attract young viewership</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/opinion/inside-track-by-coomi-kapoor-uncurated-visuals-go-viral/4343144/</guid>
+      <pubDate>Sat, 19 Sep 2026 23:43:54 +0000</pubDate>
+    </item>
+    <item>
+      <title>India’s railway boom has a hidden SME layer. 3 stocks to watch</title>
+      <link>https://www.financialexpress.com/market/stock-insights/indias-railway-boom-has-a-hidden-sme-layer-3-stocks-to-watch/4342941/</link>
+      <description>Discover three specialized SME railway suppliers that pass strict financial screens for low debt, strong growth, and robust ROCE while expanding capacity to capture India’s railway infrastructure boom.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/market/stock-insights/indias-railway-boom-has-a-hidden-sme-layer-3-stocks-to-watch/4342941/</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>India’s defence boom has a Rs 33,600-cr machine-tool story. 2 stocks to watch</title>
+      <link>https://www.financialexpress.com/market/stock-insights/indias-defence-boom-has-a-rs-33600-cr-machine-tool-story-2-stocks-to-watch/4342928/</link>
+      <description>India is making more aircraft, missiles, and defence systems. That is creating a parallel opportunity in the machines required to manufacture their precision components.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/market/stock-insights/indias-defence-boom-has-a-rs-33600-cr-machine-tool-story-2-stocks-to-watch/4342928/</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>One profit jumped 75%, the other hit a record: 2 rural NBFCs to watch</title>
+      <link>https://www.financialexpress.com/market/stock-insights/one-profit-jumped-75-the-other-hit-a-record-2-rural-nbfcs-to-watch/4342920/</link>
+      <description>Two rural NBFCs are showing a sharp earnings recovery, but their paths differ. One trades near historical valuation, while the other commands a steep premium—raising a key question around growth and rural risks.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/market/stock-insights/one-profit-jumped-75-the-other-hit-a-record-2-rural-nbfcs-to-watch/4342920/</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>LPG subsidy alert: Aadhaar biometric authentication mandatory from Oct 1; what consumers must do</title>
       <link>https://www.financialexpress.com/business/news/lpg-subsidy-alert-aadhaar-biometric-authentication-mandatory-from-oct-1-what-consumers-must-do/4343179/</link>
-      <description>Domestic LPG consumers must complete biometric Aadhaar authentication by October 1 to avail subsidised gas refills, ensuring subsidies reach eligible…</description>
+      <description>Domestic LPG consumers must complete biometric Aadhaar authentication by October 1 to avail subsidised gas refills, ensuring subsidies reach eligible households and preventing misuse.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/business/news/lpg-subsidy-alert-aadhaar-biometric-authentication-mandatory-from-oct-1-what-consumers-must-do/4343179/</guid>
-      <pubDate>Sun, 20 Sep 2026 05:52:17 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 00:00:39 +0000</pubDate>
     </item>
     <item>
       <title>HDFC Bank to GMR Airports: Why top brokerages are bullish on these 3 stocks with up to 62% upside potential</title>
       <link>https://www.financialexpress.com/market/hdfc-bank-to-gmr-airports-why-top-brokerages-are-bullish-on-these-3-stocks-with-up-to-62-upside-potential/4342224/</link>
-      <description>Brokerage consensus stock picks are centred on HDFC Bank, Coforge and GMR Airports, with brokerages highlighting CEO succession, enterprise AI…</description>
+      <description>Brokerage consensus stock picks are centred on HDFC Bank, Coforge and GMR Airports, with brokerages highlighting CEO succession, enterprise AI growth and airport monetisation as key catalysts.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/market/hdfc-bank-to-gmr-airports-why-top-brokerages-are-bullish-on-these-3-stocks-with-up-to-62-upside-potential/4342224/</guid>
-      <pubDate>Sun, 20 Sep 2026 05:52:00 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 00:22:00 +0000</pubDate>
     </item>
     <item>
       <title>Trump cuts short Camp David trip as US embassies issue security alerts across Middle East</title>
       <link>https://www.financialexpress.com/world-news/us-news/trump-cuts-short-camp-david-trip-as-us-embassies-issue-security-alerts-across-middle-east/4343203/</link>
-      <description>Several US embassies in West Asia issued security alerts warning Americans of escalating conflict in the Middle East, urging caution…</description>
+      <description>Several US embassies in West Asia issued security alerts warning Americans of escalating conflict in the Middle East, urging caution amid attacks on Saudi Arabia, potential flight disruptions, and increased threats.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/world-news/us-news/trump-cuts-short-camp-david-trip-as-us-embassies-issue-security-alerts-across-middle-east/4343203/</guid>
-      <pubDate>Sun, 20 Sep 2026 07:30:46 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 01:56:26 +0000</pubDate>
     </item>
     <item>
       <title>Delhi’s Barapullah Phase 3 corridor to open Sep 29  —  What changes for Mayur Vihar-AIIMS commuters</title>
       <link>https://www.financialexpress.com/business/roadways/delhis-barapullah-phase-3-corridor-to-open-sep-29-what-changes-for-mayur-vihar-aiims-commuters/4343222/</link>
-      <description>Delhi commuters will soon benefit from the Barapullah Phase 3 corridor opening on September 29, offering signal-free connectivity between Mayur…</description>
+      <description>Delhi commuters will soon benefit from the Barapullah Phase 3 corridor opening on September 29, offering signal-free connectivity between Mayur Vihar Phase 1 and Sarai Kale Khan, including cycle tracks and pedestrian infrastructure.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/business/roadways/delhis-barapullah-phase-3-corridor-to-open-sep-29-what-changes-for-mayur-vihar-aiims-commuters/4343222/</guid>
-      <pubDate>Sun, 20 Sep 2026 08:50:52 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 03:17:46 +0000</pubDate>
     </item>
     <item>
       <title>Two Danish engineers, one desk and Rs 20,000: The making of a $55 billion Indian giant</title>
       <link>https://www.financialexpress.com/business/news/two-danish-engineers-one-desk-and-rs-20000-the-making-of-a-55-billion-indian-giant/4343220/</link>
-      <description>Discover the inspiring journey of Larsen &amp; Toubro, from a modest start with Rs 20,000 and a shared desk to…</description>
+      <description>Discover the inspiring journey of Larsen &amp; Toubro, from a modest start with Rs 20,000 and a shared desk to becoming a powerhouse in engineering, construction, nuclear, and aerospace industries in India.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/business/news/two-danish-engineers-one-desk-and-rs-20000-the-making-of-a-55-billion-indian-giant/4343220/</guid>
-      <pubDate>Sun, 20 Sep 2026 09:00:00 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 03:30:00 +0000</pubDate>
     </item>
     <item>
       <title>Who is paying for the AI race? Goldman Sachs flags a rising global cost of capital</title>
       <link>https://www.financialexpress.com/business/industry-who-is-paying-for-ai-boom-race-goldman-sachs-flags-rising-global-cost-of-capital-4343236/</link>
       <description>Higher earnings and GDP growth may support equities, but rising bond yields could limit valuation gains.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/business/industry-who-is-paying-for-ai-boom-race-goldman-sachs-flags-rising-global-cost-of-capital-4343236/</guid>
-      <pubDate>Sun, 20 Sep 2026 11:25:49 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 04:52:26 +0000</pubDate>
     </item>
     <item>
       <title>NHAI plans 2-km four-lane flyover in Bihar’s Simrahi Bazar; construction timeline set at 2 years</title>
       <link>https://www.financialexpress.com/business/roadways-nhai-plans-2-km-four-lane-flyover-in-bihars-simrahi-bazar-construction-timeline-set-at-2-years-4343248/</link>
-      <description>NHAI invites bids for a Rs 184.90 crore four-lane flyover project at Simrahi Bazar on NH-27, Bihar, covering 2.04 km…</description>
+      <description>NHAI invites bids for a Rs 184.90 crore four-lane flyover project at Simrahi Bazar on NH-27, Bihar, covering 2.04 km with approaches and service roads, targeting completion in two years.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/business/roadways-nhai-plans-2-km-four-lane-flyover-in-bihars-simrahi-bazar-construction-timeline-set-at-2-years-4343248/</guid>
-      <pubDate>Sun, 20 Sep 2026 10:28:40 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 04:58:40 +0000</pubDate>
     </item>
     <item>
       <title>Chennai man went from Rs 9,500 salary to Rs 80 lakh income, then zero: 5 money lessons</title>
       <link>https://www.financialexpress.com/money/chennai-man-went-from-rs-9500-salary-to-rs-80-lakh-income-then-zero-5-money-lessons-4343265/</link>
-      <description>A Tamil Nadu man’s journey from a Rs 9,500 salary to Rs 80 lakh income and then zero offers five…</description>
+      <description>A Tamil Nadu man’s journey from a Rs 9,500 salary to Rs 80 lakh income and then zero offers five simple lessons on spending, saving, investing and building lasting wealth.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/money/chennai-man-went-from-rs-9500-salary-to-rs-80-lakh-income-then-zero-5-money-lessons-4343265/</guid>
-      <pubDate>Sun, 20 Sep 2026 11:49:21 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 06:19:21 +0000</pubDate>
     </item>
     <item>
       <title>Indora-Dighori flyover opens in Nagpur: Rs 998-cr project aims to cut travel time to 15 mins</title>
       <link>https://www.financialexpress.com/business/roadways-indora-dighori-flyover-opens-in-nagpur-rs-998-cr-project-aims-to-cut-travel-time-to-15-mins-4343291/</link>
-      <description>Nagpur’s new 8.90 km Indora-Dighora flyover, costing Rs 998 crore, reduces travel time from 40-50 minutes to 15 minutes, easing…</description>
+      <description>Nagpur’s new 8.90 km Indora-Dighora flyover, costing Rs 998 crore, reduces travel time from 40-50 minutes to 15 minutes, easing traffic and boosting connectivity across the city.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/business/roadways-indora-dighori-flyover-opens-in-nagpur-rs-998-cr-project-aims-to-cut-travel-time-to-15-mins-4343291/</guid>
-      <pubDate>Sun, 20 Sep 2026 13:25:03 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 07:46:45 +0000</pubDate>
     </item>
     <item>
       <title>From blue economy to AI: K’taka announces Rs 1,420 cr twin policies to drive investment, jobs</title>
       <link>https://www.financialexpress.com/business/industry-karnataka-announces-rs-1420-crore-twin-policies-to-drive-investment-jobs-blue-economy-ai-infrastructure-data-centre-marine-biotech-4343267/</link>
       <description>Karnataka aims to turn its 340-km coastline and marine biodiversity into high-value products, companies and intellectual property.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/business/industry-karnataka-announces-rs-1420-crore-twin-policies-to-drive-investment-jobs-blue-economy-ai-infrastructure-data-centre-marine-biotech-4343267/</guid>
-      <pubDate>Sun, 20 Sep 2026 14:10:58 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 07:49:15 +0000</pubDate>
     </item>
     <item>
       <title>From ‘hoax’ to ‘AI Force’: Has Trump changed his mind on AI guardrails?</title>
       <link>https://www.financialexpress.com/world-news/us-news/from-hoax-to-ai-force-has-trump-changed-his-mind-on-ai-guardrails/4343242/</link>
-      <description>US President Donald Trump announced plans to create an “AI Force” and appoint a new AI czar while opposing any…</description>
+      <description>US President Donald Trump announced plans to create an “AI Force” and appoint a new AI czar while opposing any slowdown in AI development, emphasizing tech dominance amid US-China rivalry.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/world-news/us-news/from-hoax-to-ai-force-has-trump-changed-his-mind-on-ai-guardrails/4343242/</guid>
-      <pubDate>Sun, 20 Sep 2026 13:58:05 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 08:09:58 +0000</pubDate>
     </item>
     <item>
       <title>Railway safety push: What is Electronic Interlocking and which 7 Solapur stations will get it?</title>
       <link>https://www.financialexpress.com/business/railways-railway-safety-push-what-is-electronic-interlocking-and-which-7-solapur-stations-will-get-it-4343308/</link>
-      <description>Indian Railways approves a Rs 209 crore Electronic Interlocking project at seven Solapur Division stations to modernize signalling and enhance…</description>
+      <description>Indian Railways approves a Rs 209 crore Electronic Interlocking project at seven Solapur Division stations to modernize signalling and enhance railway safety infrastructure.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/business/railways-railway-safety-push-what-is-electronic-interlocking-and-which-7-solapur-stations-will-get-it-4343308/</guid>
-      <pubDate>Sun, 20 Sep 2026 15:41:04 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 08:14:43 +0000</pubDate>
     </item>
     <item>
       <title>Train runs 8 hours 48 minutes late, Railways told to pay Rs 35,000 to passenger</title>
       <link>https://www.financialexpress.com/legal/train-runs-8-hours-48-minutes-late-railways-told-to-pay-rs-35000-to-passenger/4343320/</link>
-      <description>The train allegedly ran behind schedule. It eventually reached Sambalpur after a delay of 528 minutes, or 8 hours and…</description>
+      <description>The train allegedly ran behind schedule. It eventually reached Sambalpur after a delay of 528 minutes, or 8 hours and 48 minutes.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/legal/train-runs-8-hours-48-minutes-late-railways-told-to-pay-rs-35000-to-passenger/4343320/</guid>
-      <pubDate>Sun, 20 Sep 2026 13:59:11 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 08:29:11 +0000</pubDate>
     </item>
     <item>
       <title>U’khand transfers Rs 18 cr to 10,709 construction worker families ahead of festival season</title>
       <link>https://www.financialexpress.com/india-news/uttarakhand-government-transfers-rs-18-crore-to-10709-construction-worker-families-ahead-of-festival-season/4343302/</link>
       <description>Uttarakhand CM Pushkar Singh Dhami oversaw the transfer, calling it a festive gift for construction workers.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/india-news/uttarakhand-government-transfers-rs-18-crore-to-10709-construction-worker-families-ahead-of-festival-season/4343302/</guid>
-      <pubDate>Sun, 20 Sep 2026 14:46:39 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 09:02:37 +0000</pubDate>
     </item>
     <item>
       <title>Railways clears Rs 133-cr four-lane road over bridge to replace level crossing in Gujarat</title>
       <link>https://www.financialexpress.com/business/railways-railways-clears-rs-133-cr-four-lane-road-over-bridge-to-replace-level-crossing-in-gujarat-4343338/</link>
-      <description>Indian Railways to upgrade Western Railway’s Udhna-Ukai Songadh section with a Rs 133 crore four-lane Road Over Bridge replacing Level…</description>
+      <description>Indian Railways to upgrade Western Railway’s Udhna-Ukai Songadh section with a Rs 133 crore four-lane Road Over Bridge replacing Level Crossing No.53 for smoother traffic and safer rail operations.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/business/railways-railways-clears-rs-133-cr-four-lane-road-over-bridge-to-replace-level-crossing-in-gujarat-4343338/</guid>
-      <pubDate>Sun, 20 Sep 2026 15:37:09 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 10:04:16 +0000</pubDate>
     </item>
     <item>
       <title>Trump’s approval falls to 37% as inflation and Iran conflict weigh on midterm outlook: Report</title>
       <link>https://www.financialexpress.com/world-news/us-news/trumps-approval-falls-to-37-as-inflation-and-iran-conflict-weigh-on-midterm-outlook-report/4343344/</link>
-      <description>President Donald Trump’s approval rating drops to the weakest point of his second term, with decreased support among conservatives and…</description>
+      <description>President Donald Trump’s approval rating drops to the weakest point of his second term, with decreased support among conservatives and independents as economic concerns and foreign policy issues impact voter sentiment ahead of the midterm elections.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/world-news/us-news/trumps-approval-falls-to-37-as-inflation-and-iran-conflict-weigh-on-midterm-outlook-report/4343344/</guid>
-      <pubDate>Sun, 20 Sep 2026 15:43:16 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 10:13:16 +0000</pubDate>
     </item>
     <item>
       <title>Where America’s richest billionaires live: These 5 states dominate Forbes 400 list</title>
       <link>https://www.financialexpress.com/world-news/us-news/where-americas-richest-billionaires-live-these-5-states-dominate-forbes-400-list/4343356/</link>
-      <description>California leads with 85 billionaires in the Forbes 400, followed by New York, Florida, Texas, and Illinois, highlighting a significant…</description>
+      <description>California leads with 85 billionaires in the Forbes 400, followed by New York, Florida, Texas, and Illinois, highlighting a significant concentration of America’s billionaire wealth in just five states.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/world-news/us-news/where-americas-richest-billionaires-live-these-5-states-dominate-forbes-400-list/4343356/</guid>
-      <pubDate>Sun, 20 Sep 2026 16:09:35 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 10:39:35 +0000</pubDate>
     </item>
     <item>
       <title>AI antitrust lawsuit: Anthropic, OpenAI, xAI, Google accused of colluding to slow development</title>
       <link>https://www.financialexpress.com/world-news/us-news/ai-antitrust-lawsuit-anthropic-openai-xai-google-accused-of-colluding-to-slow-development/4343364/</link>
-      <description>A lawsuit accuses Anthropic, OpenAI, xAI, and Google of illegally coordinating to slow AI development, alleging antitrust violations that limit…</description>
+      <description>A lawsuit accuses Anthropic, OpenAI, xAI, and Google of illegally coordinating to slow AI development, alleging antitrust violations that limit competition and harm paid AI subscribers.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/world-news/us-news/ai-antitrust-lawsuit-anthropic-openai-xai-google-accused-of-colluding-to-slow-development/4343364/</guid>
-      <pubDate>Sun, 20 Sep 2026 16:25:25 +0530</pubDate>
+      <pubDate>Sun, 20 Sep 2026 10:55:25 +0000</pubDate>
     </item>
     <item>
       <title>Tata Trusts reject casting vote for Chandra’s reappointment, call resolution invalid</title>
       <link>https://www.financialexpress.com/business/news/tata-trusts-reject-casting-vote-for-chandras-reappointment-call-resolution-invalid/4343243/</link>
-      <description>Tata Trusts challenged the use of a casting vote to validate N Chandrasekaran’s reappointment as Tata Sons chairman, citing lack…</description>
+      <description>Tata Trusts challenged the use of a casting vote to validate N Chandrasekaran’s reappointment as Tata Sons chairman, citing lack of mandatory support from nominee directors and deeming the resolution legally void.</description>
       <guid isPermaLink="false">https://www.financialexpress.com/business/news/tata-trusts-reject-casting-vote-for-chandras-reappointment-call-resolution-invalid/4343243/</guid>
-      <pubDate>Sun, 20 Sep 2026 11:41:43 +0000</pubDate>
+      <pubDate>Sun, 20 Sep 2026 11:15:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>Explainer: What India’s export data and import basket suggest</title>
+      <link>https://www.financialexpress.com/policy/economy/explainer-what-indias-export-data-and-import-basket-suggest/4343382/</link>
+      <description>India’s merchandise exports jumped 26% in August FY27, led by electronics and engineering. While the import bill is also rising, key capital goods are boosting domestic manufacturing and long-term productive capacity.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/policy/economy/explainer-what-indias-export-data-and-import-basket-suggest/4343382/</guid>
+      <pubDate>Sun, 20 Sep 2026 11:41:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>‘Casting vote cannot revive’ Chandrasekaran resolution, say Tata Trusts | Full statement</title>
+      <link>https://www.financialexpress.com/business/news/casting-vote-cannot-revive-chandrasekaran-resolution-say-tata-trusts-full-statement/4343385/</link>
+      <description>Tata Trusts challenges the validity of N. Chandrasekaran’s reappointment as Tata Sons chairman, arguing the resolution failed due to lack of majority support from Trust-nominated directors as per the Articles of Association.</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/business/news/casting-vote-cannot-revive-chandrasekaran-resolution-say-tata-trusts-full-statement/4343385/</guid>
+      <pubDate>Sun, 20 Sep 2026 11:47:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>ICAI mandates peer review for PSB branch auditors</title>
+      <link>https://www.financialexpress.com/business/news/icai-mandates-peer-review-for-psb-branch-auditors/4343390/</link>
+      <description>Targets 1-year disposal of disciplinary cases</description>
+      <guid isPermaLink="false">https://www.financialexpress.com/business/news/icai-mandates-peer-review-for-psb-branch-auditors/4343390/</guid>
+      <pubDate>Sun, 20 Sep 2026 11:52:08 +0000</pubDate>
     </item>
   </channel>
 </rss>
