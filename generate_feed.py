@@ -9,7 +9,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
-    "Cache-Control": "max-age=0, no-cache",
+    "Cache-Control": "no-cache",
     "Pragma": "no-cache",
     "Sec-Ch-Ua": '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"',
     "Sec-Ch-Ua-Mobile": "?0",
@@ -41,6 +41,7 @@ def build_rss_feed():
     fg.link(href=URL, rel="alternate")
     fg.description("Latest news stories from Financial Express main feed.")
     fg.language("en")
+    fg.lastBuildDate(datetime.datetime.now(datetime.timezone.utc))
 
     seen_links = set()
     items_count = 0
@@ -93,7 +94,7 @@ def build_rss_feed():
         fe.pubDate(pub_date)
 
     fg.rss_file("feed.xml", pretty=True)
-    print(f"Successfully generated feed.xml with {items_count} live stories.")
+    print(f"Done! Generated feed.xml with {items_count} items.")
 
 if __name__ == "__main__":
     build_rss_feed()
