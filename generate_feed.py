@@ -1,30 +1,36 @@
 import datetime
+import time
 import requests
 from bs4 import BeautifulSoup
 from feedgen.feed import FeedGenerator
 
-TARGET_URL = "https://www.financialexpress.com/latest-news/"
+BASE_URL = "https://www.financialexpress.com/latest-news/"
 
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/120.0.0.0 Safari/537.36"
+        "Chrome/124.0.0.0 Safari/537.36"
     ),
     "Accept-Language": "en-US,en;q=0.9",
+    "Cache-Control": "no-cache, no-store, must-revalidate",
+    "Pragma": "no-cache",
 }
 
 def build_rss_feed():
     fg = FeedGenerator()
-    fg.id(TARGET_URL)
+    fg.id(BASE_URL)
     fg.title("Financial Express - Latest News")
     fg.author({"name": "Financial Express Scraper"})
-    fg.link(href=TARGET_URL, rel="alternate")
+    fg.link(href=BASE_URL, rel="alternate")
     fg.description("Latest news stories from Financial Express main feed.")
     fg.language("en")
 
+    # Add timestamp parameter to bypass server/CDN caching
+    cache_buster_url = f"{BASE_URL}?_cb={int(time.time())}"
+
     try:
-        response = requests.get(TARGET_URL, headers=HEADERS, timeout=15)
+        response = requests.get(cache_buster_url, headers=HEADERS, timeout=15)
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         print(f"Error fetching URL: {e}")
@@ -35,7 +41,6 @@ def build_rss_feed():
     seen_links = set()
     items_count = 0
 
-    # Target the main article titles directly
     title_blocks = soup.select("div.entry-title")
 
     for block in title_blocks:
@@ -55,7 +60,6 @@ def build_rss_feed():
         seen_links.add(url)
         items_count += 1
 
-        # Extract parent article to get summary and timestamp
         article = block.find_parent("article")
         description = title
         pub_date = None
