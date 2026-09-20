@@ -2,7 +2,7 @@ name: Update and Deploy RSS Feed
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/20 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -37,23 +37,17 @@ jobs:
         run: |
           python generate_feed.py
 
-      - name: Log Extracted Headlines
-        run: |
-          python3 -c '
-          import xml.etree.ElementTree as ET
-          tree = ET.parse("feed.xml")
-          items = tree.findall(".//item/title")
-          print("=== HEADLINES EXTRACTED ON GITHUB RUNNER ===")
-          for i, t in enumerate(items[:5], 1):
-              print(f"{i}. {t.text}")
-          '
-
-      - name: Commit and Push Updated Feed to Repo
+      - name: Commit and Push Updated Feed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml
-          git diff --staged --quiet || (git commit -m "Auto-update feed.xml" && git push)
+          if [ -n "$(git status --porcelain feed.xml)" ]; then
+            git commit -m "Auto-update feed.xml [skip ci]"
+            git push origin main
+          else
+            echo "No changes in feed.xml to commit"
+          fi
 
       - name: Prepare Pages Artifact
         run: |
