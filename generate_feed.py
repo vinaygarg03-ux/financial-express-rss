@@ -25,7 +25,7 @@ def main():
     fg.lastBuildDate(datetime.datetime.now(datetime.timezone.utc))
 
     seen = set()
-    entries = []
+    count = 0
 
     for div in soup.select("div.entry-title"):
         a = div.find("a")
@@ -33,36 +33,44 @@ def main():
             continue
         link = a.get("href").strip()
         title = a.get_text(strip=True)
+
         if not title or link in seen:
             continue
+
         if link.startswith("/"):
             link = "https://www.financialexpress.com" + link
+
         seen.add(link)
+        count += 1
 
         article = div.find_parent("article")
         desc = title
+        pub_date = None
+
         if article:
             summary = article.select_one("p, .entry-summary, .post-excerpt")
             if summary and summary.get_text(strip=True):
                 desc = summary.get_text(strip=True)
 
-        entries.append({
-            "title": title,
-            "link": link,
-            "description": desc
-        })
+            time_tag = article.find("time")
+            if time_tag and time_tag.get("datetime"):
+                try:
+                    pub_date = datetime.datetime.fromisoformat(time_tag.get("datetime").replace("Z", "+00:00"))
+                except ValueError:
+                    pub_date = datetime.datetime.now(datetime.timezone.utc)
 
-    # Add entries in reverse order so the freshest items in the main stream sit on top
-    for item in entries[::-1]:
+        if not pub_date:
+            pub_date = datetime.datetime.now(datetime.timezone.utc)
+
         fe = fg.add_entry()
-        fe.id(item["link"])
-        fe.title(item["title"])
-        fe.link(href=item["link"])
-        fe.description(item["description"])
-        fe.pubDate(datetime.datetime.now(datetime.timezone.utc))
+        fe.id(link)
+        fe.title(title)
+        fe.link(href=link)
+        fe.description(desc)
+        fe.pubDate(pub_date)
 
     fg.rss_file("feed.xml", pretty=True)
-    print(f"Generated feed.xml with {len(entries)} items (freshest prioritized).")
+    print(f"Generated feed.xml with {count} items in correct chronological order.")
 
 if __name__ == "__main__":
     main()
