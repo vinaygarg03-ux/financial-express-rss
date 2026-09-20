@@ -20,7 +20,7 @@ def build_rss_feed():
     fg.title("Financial Express - Latest News")
     fg.author({"name": "Financial Express Scraper"})
     fg.link(href=TARGET_URL, rel="alternate")
-    fg.description("Latest news and real-time updates from Financial Express.")
+    fg.description("Latest news stories from Financial Express main feed.")
     fg.language("en")
 
     try:
@@ -31,11 +31,15 @@ def build_rss_feed():
         return
 
     soup = BeautifulSoup(response.content, "html.parser")
-    articles = soup.select("div.post-content, article, div.entry-wrapper")
-    seen_links = set()
 
-    for item in articles:
-        link_tag = item.select_one("h2 a, h3 a, a.entry-title")
+    seen_links = set()
+    items_count = 0
+
+    # Target the main article titles directly
+    title_blocks = soup.select("div.entry-title")
+
+    for block in title_blocks:
+        link_tag = block.find("a")
         if not link_tag or not link_tag.get("href"):
             continue
 
@@ -45,23 +49,32 @@ def build_rss_feed():
         if not title or url in seen_links:
             continue
 
+        if url.startswith("/"):
+            url = "https://www.financialexpress.com" + url
+
         seen_links.add(url)
+        items_count += 1
 
-        summary_tag = item.select_one("p, div.post-excerpt")
-        description = summary_tag.get_text(strip=True) if summary_tag else title
-
-        time_tag = item.select_one("time, span.post-date, div.post-date")
+        # Extract parent article to get summary and timestamp
+        article = block.find_parent("article")
+        description = title
         pub_date = None
-        if time_tag:
-            datetime_attr = time_tag.get("datetime")
-            if datetime_attr:
+
+        if article:
+            summary_tag = article.select_one("p, .entry-summary, .post-excerpt")
+            if summary_tag and summary_tag.get_text(strip=True):
+                description = summary_tag.get_text(strip=True)
+
+            time_tag = article.find("time")
+            if time_tag and time_tag.get("datetime"):
                 try:
-                    pub_date = datetime.datetime.fromisoformat(datetime_attr.replace("Z", "+00:00"))
+                    pub_date = datetime.datetime.fromisoformat(
+                        time_tag.get("datetime").replace("Z", "+00:00")
+                    )
                 except ValueError:
                     pub_date = datetime.datetime.now(datetime.timezone.utc)
-            else:
-                pub_date = datetime.datetime.now(datetime.timezone.utc)
-        else:
+
+        if not pub_date:
             pub_date = datetime.datetime.now(datetime.timezone.utc)
 
         fe = fg.add_entry()
@@ -72,7 +85,7 @@ def build_rss_feed():
         fe.pubDate(pub_date)
 
     fg.rss_file("feed.xml", pretty=True)
-    print(f"Successfully generated feed.xml with {len(seen_links)} items.")
+    print(f"Successfully generated feed.xml with {items_count} main feed stories.")
 
 if __name__ == "__main__":
     build_rss_feed()
