@@ -1,51 +1,30 @@
 import datetime
 import sys
-from playwright.sync_api import sync_playwright
+from seleniumbase import Driver
 from bs4 import BeautifulSoup
 from feedgen.feed import FeedGenerator
 
 TARGET_URL = "https://www.financialexpress.com/latest-news/"
 
 def main():
-    print("Launching stealth browser...")
-    with sync_playwright() as p:
-        # Launch with flags that mask automated browser fingerprints
-        browser = p.chromium.launch(
-            headless=True,
-            args=[
-                "--disable-blink-features=AutomationControlled",
-                "--no-sandbox",
-                "--disable-dev-shm-usage",
-                "--disable-infobars"
-            ]
-        )
-        context = browser.new_context(
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-            viewport={"width": 1440, "height": 900},
-            locale="en-US"
-        )
-        page = context.new_page()
+    print("Launching Undetected Chrome (UC Mode)...")
+    # Launch Chrome with undetected-chromedriver and headless UC mode
+    driver = Driver(uc=True, headless=True)
 
-        # Mask navigator.webdriver
-        page.add_init_script("""
-            Object.defineProperty(navigator, 'webdriver', {
-                get: () => undefined
-            });
-        """)
+    try:
+        print(f"Navigating to {TARGET_URL}...")
+        driver.uc_open_with_reconnect(TARGET_URL, reconnect_time=6)
 
-        print(f"Loading {TARGET_URL}...")
-        page.goto(TARGET_URL, wait_until="networkidle", timeout=60000)
+        # Wait for article title element to appear
+        driver.wait_for_element_present("div.entry-title", timeout=25)
+        html = driver.page_source
+    except Exception as e:
+        print("Wait encountered notice:", e)
+        html = driver.page_source
+    finally:
+        driver.quit()
 
-        # Wait until article elements actually populate
-        try:
-            page.wait_for_selector("div.entry-title", timeout=15000)
-        except Exception:
-            print("Warning: Selector wait timed out, proceeding to parse DOM...")
-
-        content = page.content()
-        browser.close()
-
-    soup = BeautifulSoup(content, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
 
     fg = FeedGenerator()
     fg.id(TARGET_URL)
@@ -102,7 +81,7 @@ def main():
         fe.pubDate(pub_date)
 
     if count == 0:
-        print("ERROR: Scraped 0 items. Cloudflare or DOM mismatch. Aborting feed deployment.")
+        print("ERROR: Scraped 0 items. Cloudflare or DOM mismatch.")
         sys.exit(1)
 
     fg.rss_file("feed.xml", pretty=True)
