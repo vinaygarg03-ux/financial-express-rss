@@ -1,30 +1,34 @@
 import datetime
-import sys
-from seleniumbase import Driver
+import html
+import requests
 from bs4 import BeautifulSoup
 from feedgen.feed import FeedGenerator
 
 TARGET_URL = "https://www.financialexpress.com/latest-news/"
+# Route through Google's official translate mirror to access the page via Google crawler IPs
+PROXY_URL = "https://www-financialexpress-com.translate.goog/latest-news/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en"
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+}
+
+def clean_url(url):
+    """Strip Google Translate tracking parameters and restore original URL."""
+    if not url:
+        return ""
+    if "_x_tr" in url:
+        url = url.split("?")[0].replace("-translate-goog", "").replace("www-financialexpress-com", "www.financialexpress.com")
+    if url.startswith("https://www.google.com/url?q="):
+        url = url.split("https://www.google.com/url?q=")[1].split("&")[0]
+    return url
 
 def main():
-    print("Launching Undetected Chrome (UC Mode)...")
-    # Launch Chrome with undetected-chromedriver and headless UC mode
-    driver = Driver(uc=True, headless=True)
-
-    try:
-        print(f"Navigating to {TARGET_URL}...")
-        driver.uc_open_with_reconnect(TARGET_URL, reconnect_time=6)
-
-        # Wait for article title element to appear
-        driver.wait_for_element_present("div.entry-title", timeout=25)
-        html = driver.page_source
-    except Exception as e:
-        print("Wait encountered notice:", e)
-        html = driver.page_source
-    finally:
-        driver.quit()
-
-    soup = BeautifulSoup(html, "html.parser")
+    print("Fetching via Google Proxy Mirror...")
+    res = requests.get(PROXY_URL, headers=HEADERS, timeout=25)
+    res.raise_for_status()
+    
+    soup = BeautifulSoup(res.text, "html.parser")
 
     fg = FeedGenerator()
     fg.id(TARGET_URL)
@@ -42,7 +46,8 @@ def main():
         if not a or not a.get("href"):
             continue
 
-        link = a.get("href").strip()
+        raw_link = a.get("href").strip()
+        link = clean_url(raw_link)
         title = a.get_text(strip=True)
 
         if not title or link in seen:
@@ -81,8 +86,8 @@ def main():
         fe.pubDate(pub_date)
 
     if count == 0:
-        print("ERROR: Scraped 0 items. Cloudflare or DOM mismatch.")
-        sys.exit(1)
+        print("ERROR: Scraped 0 items. Target structure changed.")
+        exit(1)
 
     fg.rss_file("feed.xml", pretty=True)
     print(f"SUCCESS: Generated feed.xml with {count} items.")

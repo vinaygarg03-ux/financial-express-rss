@@ -33,7 +33,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install seleniumbase beautifulsoup4 feedgen
+          pip install requests beautifulsoup4 feedgen
 
       - name: Generate RSS Feed
         run: |
