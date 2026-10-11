@@ -1,99 +1,115 @@
-import datetime
-import email.utils
-import html
+import os
 import time
+import requests
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
-import requests
-from bs4 import BeautifulSoup
+from email.utils import formatdate
 
 WORKER_URL = "https://quiet-salad-e40e.vinay-garg03.workers.dev/"
-SITE_URL = "https://www.financialexpress.com/latest-news/"
+FEED_FILE = "feed.xml"
+MAX_ITEMS = 500
 
-def clean_html(raw_html):
-    if not raw_html:
-        return ""
-    soup = BeautifulSoup(raw_html, "html.parser")
-    return html.unescape(soup.get_text(strip=True))
-
-def parse_date(date_str):
-    if not date_str:
-        return datetime.datetime.now(datetime.timezone.utc)
+def parse_existing_feed():
+    items = []
+    if not os.path.exists(FEED_FILE):
+        return items
     try:
-        clean = date_str.replace("Z", "")
-        dt = datetime.datetime.fromisoformat(clean)
-        return dt.replace(tzinfo=datetime.timezone.utc)
-    except Exception:
-        return datetime.datetime.now(datetime.timezone.utc)
+        tree = ET.parse(FEED_FILE)
+        root = tree.getroot()
+        channel = root.find("channel")
+        if channel is None:
+            return items
+        for item in channel.findall("item"):
+            title = item.findtext("title", "")
+            link = item.findtext("link", "")
+            guid = item.findtext("guid", link)
+            pub_date = item.findtext("pubDate", "")
+            description = item.findtext("description", "")
+            if link:
+                items.append({
+                    "title": title,
+                    "link": link,
+                    "guid": guid,
+                    "pubDate": pub_date,
+                    "description": description
+                })
+    except Exception as e:
+        print(f"Notice: Could not parse existing feed.xml: {e}")
+    return items
 
 def main():
     ts = int(time.time())
     request_url = f"{WORKER_URL}?t={ts}"
     print(f"Fetching live articles: {request_url}")
 
-    res = requests.get(request_url, timeout=25)
-    res.raise_for_status()
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    }
+    
+    try:
+        res = requests.get(request_url, headers=headers, timeout=25)
+        res.raise_for_status()
+        posts = res.json()
+    except Exception as e:
+        print(f"Fetch error: {e}")
+        return
 
-    posts = res.json()
     if not isinstance(posts, list) or len(posts) == 0:
-        raise RuntimeError("Worker did not return a valid list of posts.")
+        print("No new posts returned.")
+        return
 
-    seen = set()
-    valid_posts = []
+    existing_items = parse_existing_feed()
+    seen_links = set()
+    combined_items = []
 
+    # Add freshly fetched articles
     for post in posts:
         link = post.get("link", "").strip()
-        raw_title = post.get("title", {}).get("rendered", "")
-        title = clean_html(raw_title)
-
-        if not title or not link or link in seen:
+        if not link or link in seen_links:
             continue
-        seen.add(link)
-
-        raw_excerpt = post.get("excerpt", {}).get("rendered", "")
-        desc = clean_html(raw_excerpt) if raw_excerpt else title
-
-        # Financial Express date_gmt is in UTC
-        raw_date = post.get("date_gmt") or post.get("date") or ""
-        pub_date = parse_date(raw_date)
-
-        valid_posts.append({
-            "id": link,
-            "title": title,
+        seen_links.add(link)
+        combined_items.append({
+            "title": post.get("title", ""),
             "link": link,
-            "description": desc,
-            "pubDate": pub_date
+            "guid": link,
+            "pubDate": formatdate(time.time(), usegmt=True),
+            "description": post.get("description", post.get("summary", ""))
         })
 
-    # Sort strictly: largest timestamp (latest published) at index 0
-    valid_posts.sort(key=lambda x: x["pubDate"], reverse=True)
+    # Append older preserved articles from previous runs
+    for item in existing_items:
+        link = item.get("link", "")
+        if link and link not in seen_links:
+            seen_links.add(link)
+            combined_items.append(item)
 
-    # Build standard RSS 2.0 XML
+    # Trim to maximum rolling backlog of 500
+    trimmed_items = combined_items[:MAX_ITEMS]
+
+    # Generate standard RSS XML
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
+    ET.SubElement(channel, "title").text = "Financial Express Live"
+    ET.SubElement(channel, "link").text = "https://www.financialexpress.com/"
+    ET.SubElement(channel, "description").text = "Financial Express Live News Updates"
+    ET.SubElement(channel, "lastBuildDate").text = formatdate(time.time(), usegmt=True)
 
-    ET.SubElement(channel, "title").text = "Financial Express - Latest News"
-    ET.SubElement(channel, "link").text = SITE_URL
-    ET.SubElement(channel, "description").text = "Real-time breaking business and financial news."
-    ET.SubElement(channel, "language").text = "en"
-    ET.SubElement(channel, "lastBuildDate").text = email.utils.format_datetime(datetime.datetime.now(datetime.timezone.utc))
-
-    for post in valid_posts:
+    for item_data in trimmed_items:
         item = ET.SubElement(channel, "item")
-        ET.SubElement(item, "title").text = post["title"]
-        ET.SubElement(item, "link").text = post["link"]
-        ET.SubElement(item, "guid").text = post["link"]
-        ET.SubElement(item, "description").text = post["description"]
-        ET.SubElement(item, "pubDate").text = email.utils.format_datetime(post["pubDate"])
+        ET.SubElement(item, "title").text = item_data["title"]
+        ET.SubElement(item, "link").text = item_data["link"]
+        guid = ET.SubElement(item, "guid")
+        guid.text = item_data["guid"]
+        ET.SubElement(item, "pubDate").text = item_data["pubDate"]
+        ET.SubElement(item, "description").text = item_data["description"]
 
-    # Format pretty XML
     xml_str = ET.tostring(rss, encoding="utf-8")
     pretty_xml = minidom.parseString(xml_str).toprettyxml(indent="  ", encoding="utf-8")
 
-    with open("feed.xml", "wb") as f:
+    with open(FEED_FILE, "wb") as f:
         f.write(pretty_xml)
 
-    print(f"SUCCESS: Generated feed.xml with {len(valid_posts)} articles sorted newest first.")
+    print(f"Successfully updated {FEED_FILE} with {len(trimmed_items)} articles.")
 
 if __name__ == "__main__":
     main()
