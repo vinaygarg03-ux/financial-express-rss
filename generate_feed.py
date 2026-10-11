@@ -1,20 +1,41 @@
 import os
+import re
 import time
 import requests
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 from email.utils import formatdate
+import html
 
 WORKER_URL = "https://quiet-salad-e40e.vinay-garg03.workers.dev/"
 FEED_FILE = "feed.xml"
 MAX_ITEMS = 500
 
-def clean_text(value):
+def clean_html(raw_html):
+    if not raw_html:
+        return ""
+    # Strip HTML tags
+    clean = re.sub(r"<[^>]+>", "", raw_html)
+    # Unescape HTML entities like &amp;, &quot;, &#8217;
+    clean = html.unescape(clean).strip()
+    return clean
+
+def extract_text(value):
     if value is None:
         return ""
     if isinstance(value, dict):
-        return str(value.get("rendered", value.get("text", str(value))))
-    return str(value).strip()
+        text = value.get("rendered") or value.get("text") or value.get("value") or ""
+        return clean_html(str(text))
+    return clean_html(str(value))
+
+def get_post_summary(post):
+    # Check fields where the worker or WordPress stores snippets
+    for key in ["summary", "description", "excerpt", "content"]:
+        val = post.get(key)
+        extracted = extract_text(val)
+        if extracted:
+            return extracted
+    return ""
 
 def parse_existing_feed():
     items = []
@@ -27,14 +48,14 @@ def parse_existing_feed():
         if channel is None:
             return items
         for item in channel.findall("item"):
-            link = clean_text(item.findtext("link", ""))
+            link = extract_text(item.findtext("link", ""))
             if link:
                 items.append({
-                    "title": clean_text(item.findtext("title", "")),
+                    "title": extract_text(item.findtext("title", "")),
                     "link": link,
-                    "guid": clean_text(item.findtext("guid", link)),
-                    "pubDate": clean_text(item.findtext("pubDate", "")),
-                    "description": clean_text(item.findtext("description", ""))
+                    "guid": extract_text(item.findtext("guid", link)),
+                    "pubDate": extract_text(item.findtext("pubDate", "")),
+                    "description": extract_text(item.findtext("description", ""))
                 })
     except Exception as e:
         print(f"Notice: Could not parse existing feed: {e}")
@@ -66,18 +87,20 @@ def main():
     combined_items = []
 
     for post in posts:
-        link = clean_text(post.get("link", ""))
+        link = extract_text(post.get("link", ""))
         if not link or link in seen_links:
             continue
         seen_links.add(link)
 
-        raw_desc = post.get("description", post.get("summary", ""))
+        title = extract_text(post.get("title", ""))
+        summary = get_post_summary(post)
+
         combined_items.append({
-            "title": clean_text(post.get("title", "")),
+            "title": title,
             "link": link,
             "guid": link,
             "pubDate": formatdate(time.time(), usegmt=True),
-            "description": clean_text(raw_desc)
+            "description": summary
         })
 
     for item in existing_items:
@@ -97,12 +120,12 @@ def main():
 
     for item_data in trimmed_items:
         item = ET.SubElement(channel, "item")
-        ET.SubElement(item, "title").text = clean_text(item_data["title"])
-        ET.SubElement(item, "link").text = clean_text(item_data["link"])
+        ET.SubElement(item, "title").text = item_data["title"]
+        ET.SubElement(item, "link").text = item_data["link"]
         guid = ET.SubElement(item, "guid")
-        guid.text = clean_text(item_data["guid"])
-        ET.SubElement(item, "pubDate").text = clean_text(item_data["pubDate"])
-        ET.SubElement(item, "description").text = clean_text(item_data["description"])
+        guid.text = item_data["guid"]
+        ET.SubElement(item, "pubDate").text = item_data["pubDate"]
+        ET.SubElement(item, "description").text = item_data["description"]
 
     xml_str = ET.tostring(rss, encoding="utf-8")
     pretty_xml = minidom.parseString(xml_str).toprettyxml(indent="  ", encoding="utf-8")
@@ -110,7 +133,7 @@ def main():
     with open(FEED_FILE, "wb") as f:
         f.write(pretty_xml)
 
-    print(f"Success: Updated {FEED_FILE} with {len(trimmed_items)} articles.")
+    print(f"Success: Updated {FEED_FILE} with {len(trimmed_items)} articles (summaries restored).")
 
 if __name__ == "__main__":
     main()

@@ -1,220 +1,430 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
   <channel>
-    <title>Financial Express - Latest News</title>
-    <link>https://www.financialexpress.com/latest-news/</link>
-    <description>Real-time breaking business and financial news.</description>
-    <language>en</language>
-    <lastBuildDate>Sun, 20 Sep 2026 15:51:19 +0000</lastBuildDate>
+    <title>Financial Express Live</title>
+    <link>https://www.financialexpress.com/</link>
+    <description>Financial Express Live News Updates</description>
+    <lastBuildDate>Sun, 11 Oct 2026 17:17:08 GMT</lastBuildDate>
+    <item>
+      <title>Fuel, bitumen cost relief for highway contractors extended</title>
+      <link>https://www.financialexpress.com/business/infrastructure/fuel-bitumen-cost-relief-for-highway-contractors-extended/4358801/</link>
+      <guid>https://www.financialexpress.com/business/infrastructure/fuel-bitumen-cost-relief-for-highway-contractors-extended/4358801/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>MoRTH extends bulk diesel and bitumen price escalation compensation until December 31 to support national highway contractors impacted by elevated global oil prices.</description>
+    </item>
+    <item>
+      <title>When family values meet valuations</title>
+      <link>https://www.financialexpress.com/opinion/when-family-values-meet-valuations/4358791/</link>
+      <guid>https://www.financialexpress.com/opinion/when-family-values-meet-valuations/4358791/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>The TVS family dispute highlights the classic dilemma facing Indian business dynasties: how to balance equal inheritance, management control, and financial valuation during succession.</description>
+    </item>
+    <item>
+      <title>1 Indian dead, 10 injured in Riyadh airport attack as Houthis claim ‘responsibility’</title>
+      <link>https://www.financialexpress.com/world-news/1-indian-dead-10-injured-in-riyadh-airport-attack-as-houthis-claim-responsibility/4358792/</link>
+      <guid>https://www.financialexpress.com/world-news/1-indian-dead-10-injured-in-riyadh-airport-attack-as-houthis-claim-responsibility/4358792/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>One Indian died and at least 10 were injured in a deadly attack on Riyadh’s international airport. Yemen’s Iran-aligned Houthis claimed responsibility for the attack, while Saudi authorities reported another projectile incident near the airport.</description>
+    </item>
+    <item>
+      <title>Barricading Young India</title>
+      <link>https://www.financialexpress.com/opinion/barricading-young-india/4358785/</link>
+      <guid>https://www.financialexpress.com/opinion/barricading-young-india/4358785/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>The government must talk to the young, not wall them out, and the opposition must offer a vision</description>
+    </item>
+    <item>
+      <title>Jio changed telecom, Starlink faces the test</title>
+      <link>https://www.financialexpress.com/opinion/jio-changed-telecom-starlink-faces-the-test/4358782/</link>
+      <guid>https://www.financialexpress.com/opinion/jio-changed-telecom-starlink-faces-the-test/4358782/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>As Jio prepares for its IPO, Musk’s allegations overlook a sector shaped by competition and global partnerships</description>
+    </item>
+    <item>
+      <title>Modi@25: Steady agri-growth</title>
+      <link>https://www.financialexpress.com/opinion/modi25-steady-agri-growth/4358774/</link>
+      <guid>https://www.financialexpress.com/opinion/modi25-steady-agri-growth/4358774/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>Irrigation, food security major gains; demand-supply mismatch &amp; farmer income two key challenges</description>
+    </item>
+    <item>
+      <title>Jio-bp hikes petrol by Rs 5, diesel by Rs 3</title>
+      <link>https://www.financialexpress.com/policy/economy/jio-bp-hikes-petrol-by-rs-5-diesel-by-rs-3/4358766/</link>
+      <guid>https://www.financialexpress.com/policy/economy/jio-bp-hikes-petrol-by-rs-5-diesel-by-rs-3/4358766/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>Second private fuel retailer to raise pump prices in 10 days; state-run OMCs continue to hold rates</description>
+    </item>
+    <item>
+      <title>34 years after truck accident, Gujarat advocate gets Rs 6.19 lakh compensation</title>
+      <link>https://www.financialexpress.com/legal/34-years-after-truck-accident-gujarat-advocate-gets-rs-6-19-lakh-compensation/4358764/</link>
+      <guid>https://www.financialexpress.com/legal/34-years-after-truck-accident-gujarat-advocate-gets-rs-6-19-lakh-compensation/4358764/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>The High Court held that compensation for loss of marital life could be awarded as a distinct head of damages, separate from compensation for pain, shock and suffering.</description>
+    </item>
+    <item>
+      <title>Trump says Ukraine and Russia have agreed ‘energy ceasefire’; Zelensky responds</title>
+      <link>https://www.financialexpress.com/world-news/trump-says-ukraine-and-russia-have-agreed-energy-ceasefire/4358740/</link>
+      <guid>https://www.financialexpress.com/world-news/trump-says-ukraine-and-russia-have-agreed-energy-ceasefire/4358740/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>US President Donald Trump announced that Russia and Ukraine had agreed to an immediate “energy ceasefire” but did not specify its terms.</description>
+    </item>
+    <item>
+      <title>A quarter of Indian workers now in AI-exposed occupations: CEA</title>
+      <link>https://www.financialexpress.com/business/news/a-quarter-of-indian-workers-now-in-ai-exposed-occupations-cea/4358728/</link>
+      <guid>https://www.financialexpress.com/business/news/a-quarter-of-indian-workers-now-in-ai-exposed-occupations-cea/4358728/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>Chief Economic Adviser V Anantha Nageswaran warns that 25% of India’s workforce faces AI exposure, with entry-level workers and routine roles at the highest risk.</description>
+    </item>
+    <item>
+      <title>Investment pacts with three nations likely by December</title>
+      <link>https://www.financialexpress.com/policy/economy/investment-pacts-with-three-nations-likely-by-december/4358721/</link>
+      <guid>https://www.financialexpress.com/policy/economy/investment-pacts-with-three-nations-likely-by-december/4358721/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>India plans to sign Bilateral Investment Treaties (BITs) with Switzerland, Oman, and the Maldives by December to boost long-term foreign capital inflows and simplify dispute resolution.</description>
+    </item>
+    <item>
+      <title>California considers ‘Billionaire Tax’ system: Who are the state’s richest billionaires?</title>
+      <link>https://www.financialexpress.com/world-news/us-news/california-considers-billionaire-tax-system-who-are-the-states-richest-billionaires/4349631/</link>
+      <guid>https://www.financialexpress.com/world-news/us-news/california-considers-billionaire-tax-system-who-are-the-states-richest-billionaires/4349631/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>California leads with 85 billionaires among the 100 richest Americans in Forbes’ 2026 ranking. Prop 40, a one-time tax on billionaires, sparks debate on its economic impact and future revenues.</description>
+    </item>
+    <item>
+      <title>Rice exports may take a hit next year on lower surplus</title>
+      <link>https://www.financialexpress.com/policy/economy/rice-exports-may-take-a-hit-next-year-on-lower-surplus/4358701/</link>
+      <guid>https://www.financialexpress.com/policy/economy/rice-exports-may-take-a-hit-next-year-on-lower-surplus/4358701/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>USDA forecasts a 4% drop in India’s rice exports to 24 million tonnes for 2027 as El Niño weather slashes production, driving domestic prices up.</description>
+    </item>
+    <item>
+      <title>The Big Idea: Keeping hospitals away</title>
+      <link>https://www.financialexpress.com/business/news/the-big-idea-keeping-hospitals-away/4358698/</link>
+      <guid>https://www.financialexpress.com/business/news/the-big-idea-keeping-hospitals-away/4358698/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>Healthians founder Deepak Sahni, preventive healthcare diagnostics India, Healthians revenue FY26, home sample collection healthians, healthtech startups India, Yuvraj Singh YouWeCan investment</description>
+    </item>
+    <item>
+      <title>Homes swept away, 5 people missing: How a flash flood struck Nepal’s Budhi Gandaki valley</title>
+      <link>https://www.financialexpress.com/world-news/homes-swept-away-5-people-missing-how-a-flash-flood-struck-nepals-budhi-gandaki-valley/4358680/</link>
+      <guid>https://www.financialexpress.com/world-news/homes-swept-away-5-people-missing-how-a-flash-flood-struck-nepals-budhi-gandaki-valley/4358680/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>A flash flood on Nepal’s Budhi Gandaki River damaged homes, bridges and hydropower infrastructure in Gorkha district.</description>
+    </item>
+    <item>
+      <title>Mid-air scare on IndiGo flight as passenger’s power bank catches fire, aircraft diverted</title>
+      <link>https://www.financialexpress.com/business/airlines-aviation/mid-air-scare-on-indigo-flight-as-passengers-power-bank-catches-fire-aircraft-diverted/4358667/</link>
+      <guid>https://www.financialexpress.com/business/airlines-aviation/mid-air-scare-on-indigo-flight-as-passengers-power-bank-catches-fire-aircraft-diverted/4358667/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>A Delhi-Chennai IndiGo flight was diverted to Hyderabad after smoke emerged from a passenger’s power bank.</description>
+    </item>
+    <item>
+      <title>85% of workforce retained across 300 firms resolved under IBC</title>
+      <link>https://www.financialexpress.com/business/news/85-of-workforce-retained-across-300-firms-resolved-under-ibc/4358660/</link>
+      <guid>https://www.financialexpress.com/business/news/85-of-workforce-retained-across-300-firms-resolved-under-ibc/4358660/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>An IBBI analysis shows the Insolvency and Bankruptcy Code (IBC) protected 85% of jobs during corporate resolutions, proving its role in preserving operational value beyond creditor recovery.</description>
+    </item>
+    <item>
+      <title>India Inc switches to captive green power to cut costs, grid reliance</title>
+      <link>https://www.financialexpress.com/business/industry/india-inc-switches-to-captive-green-power-to-cut-costs-grid-reliance/4358654/</link>
+      <guid>https://www.financialexpress.com/business/industry/india-inc-switches-to-captive-green-power-to-cut-costs-grid-reliance/4358654/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>Steel, cement, auto and office operators increasingly secure electricity outside  grid</description>
+    </item>
+    <item>
+      <title>From Chennai Metro to brain research: PM Modi rolls out Rs 13,000 cr push for Tamil Nadu</title>
+      <link>https://www.financialexpress.com/india-news/from-chennai-metro-to-brain-research-pm-modi-rolls-out-rs-13000-cr-push-for-tamil-nadu/4358644/</link>
+      <guid>https://www.financialexpress.com/india-news/from-chennai-metro-to-brain-research-pm-modi-rolls-out-rs-13000-cr-push-for-tamil-nadu/4358644/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>During his visit, PM Modi also visited the brain research centre at IIT Madras and dedicated the Sudha Gopalakrishnan Brain Centre to the nation.</description>
+    </item>
+    <item>
+      <title>Parcel worth Rs 26,000 goes missing; Kerala courier firm ordered to pay man Rs 41,000</title>
+      <link>https://www.financialexpress.com/legal/parcel-worth-rs-26000-goes-missing-kerala-courier-firm-ordered-to-pay-man-rs-41000/4358632/</link>
+      <guid>https://www.financialexpress.com/legal/parcel-worth-rs-26000-goes-missing-kerala-courier-firm-ordered-to-pay-man-rs-41000/4358632/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>The man approached the consumer commission seeking compensation for the missing articles and the inconvenience caused.</description>
+    </item>
+    <item>
+      <title>Why Pacific Ocean has seen more storms than Atlantic in 2026 hurricane season</title>
+      <link>https://www.financialexpress.com/world-news/why-pacific-ocean-has-seen-more-storms-than-atlantic-in-2026-hurricane-season/4358631/</link>
+      <guid>https://www.financialexpress.com/world-news/why-pacific-ocean-has-seen-more-storms-than-atlantic-in-2026-hurricane-season/4358631/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>The Pacific has recorded 19 named storms, while the Atlantic saw its first hurricane of 2026 only in October.
+A powerful El Nino has helped suppress Atlantic storm development while supporting unusually warm Pacific waters.</description>
+    </item>
+    <item>
+      <title>‘H-1B is not a business model’: Trump admin defends US Green Card crackdown on IT firms</title>
+      <link>https://www.financialexpress.com/immigration/h-1b-is-not-a-business-model-trump-admin-defends-us-green-card-crackdown-on-it-firms/4358538/</link>
+      <guid>https://www.financialexpress.com/immigration/h-1b-is-not-a-business-model-trump-admin-defends-us-green-card-crackdown-on-it-firms/4358538/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>The Trump administration targets major tech firms and universities in a crackdown on visa abuse, suspending key companies from the PERM Green Card program and investigating J-1 scholar exchange visas.</description>
+    </item>
+    <item>
+      <title>Confirmed booking cancelled in Munnar; hotel and booking platform to pay family Rs 40,000</title>
+      <link>https://www.financialexpress.com/legal/confirmed-booking-cancelled-in-munnar-hotel-and-booking-platform-to-pay-family-rs-40000/4358612/</link>
+      <guid>https://www.financialexpress.com/legal/confirmed-booking-cancelled-in-munnar-hotel-and-booking-platform-to-pay-family-rs-40000/4358612/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>The platform told the commission that it had offered to help arrange alternative accommodation costing up to Rs 20,000 per room.</description>
+    </item>
+    <item>
+      <title>Bank withholds Rs 99,874 in KYC fraud case refund; ordered to pay Kerala couple Rs 1.35L</title>
+      <link>https://www.financialexpress.com/legal/bank-withholds-rs-99874-in-kyc-fraud-case-refund-ordered-to-pay-kerala-couple-rs-1-35-lakh/4358587/</link>
+      <guid>https://www.financialexpress.com/legal/bank-withholds-rs-99874-in-kyc-fraud-case-refund-ordered-to-pay-kerala-couple-rs-1-35-lakh/4358587/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>The complainant said his credit card payment through the bank app failed on January 7, 2023. He then received a message claiming his account was blocked and asking him to update KYC.</description>
+    </item>
+    <item>
+      <title>Motilal Oswal Mid Cap Fund vs Invesco India Mid Cap Fund: Which is Better?</title>
+      <link>https://www.financialexpress.com/market/stock-insights/motilal-oswal-mid-cap-fund-vs-invesco-india-mid-cap-fund-which-is-better/4358592/</link>
+      <guid>https://www.financialexpress.com/market/stock-insights/motilal-oswal-mid-cap-fund-vs-invesco-india-mid-cap-fund-which-is-better/4358592/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>Two mid cap funds, different strategies. Which one stands out?</description>
+    </item>
+    <item>
+      <title>6,000 detained, four former CMs held: How Delhi’s protest crackdown unfolded</title>
+      <link>https://www.financialexpress.com/india-news/6000-detained-four-former-cms-held-how-delhis-protest-crackdown-unfolded/4358535/</link>
+      <guid>https://www.financialexpress.com/india-news/6000-detained-four-former-cms-held-how-delhis-protest-crackdown-unfolded/4358535/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>Over 6,000 people, including four former chief ministers, were detained in Delhi as protests surged despite heavy police deployment and barricades around Jantar Mantar. The Supreme Court is set to hear a plea on metro service shutdown amid the crackdown.</description>
+    </item>
+    <item>
+      <title>‘Insider risks’: Microsoft CEO demands kill switch mechanism for advanced AI models</title>
+      <link>https://www.financialexpress.com/world-news/us-news/insider-risks-microsoft-ceo-demands-kill-switch-mechanism-for-advanced-ai-models/4358491/</link>
+      <guid>https://www.financialexpress.com/world-news/us-news/insider-risks-microsoft-ceo-demands-kill-switch-mechanism-for-advanced-ai-models/4358491/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>Microsoft CEO Satya Nadella warns AI models pose insider risks and advocates for emergency brakes, containment, and governance to prevent rogue AI actions and ensure accountability in AI deployment.</description>
+    </item>
+    <item>
+      <title>Refund blocked over missing receipt: College ordered to pay ex-MBBS student Rs 2.4 lakh</title>
+      <link>https://www.financialexpress.com/legal/college-ordered-to-pay-former-mbbs-student-rs-2-4-lakh-as-refund-blocked-over-missing-receipt/4358542/</link>
+      <guid>https://www.financialexpress.com/legal/college-ordered-to-pay-former-mbbs-student-rs-2-4-lakh-as-refund-blocked-over-missing-receipt/4358542/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>The commission ordered a refund of Rs 2.25 lakh, along with Rs 10,000 for mental agony and Rs 5,000 in litigation costs.</description>
+    </item>
+    <item>
+      <title>Infosys plays down US green card freeze impact, says local workforce offers cushion</title>
+      <link>https://www.financialexpress.com/business/news/infosys-plays-down-us-green-card-freeze-impact-says-local-workforce-offers-cushion/4358529/</link>
+      <guid>https://www.financialexpress.com/business/news/infosys-plays-down-us-green-card-freeze-impact-says-local-workforce-offers-cushion/4358529/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>Infosys and TCS downplay the impact of the US freeze on employment-based green cards, emphasizing strong local hiring and minimal disruption to business operations amid regulatory changes.</description>
+    </item>
+    <item>
+      <title>BEL, HAL, Solar eye strong Q2; Rs 1.5 lakh crore defence orders await govt nod</title>
+      <link>https://www.financialexpress.com/business/defence/bel-hal-solar-industries-eye-strong-q2-rs-1-5-lakh-crore-defence-orders-await-govt-nod-ccs/4358502/</link>
+      <guid>https://www.financialexpress.com/business/defence/bel-hal-solar-industries-eye-strong-q2-rs-1-5-lakh-crore-defence-orders-await-govt-nod-ccs/4358502/</guid>
+      <pubDate>Sun, 11 Oct 2026 17:17:08 GMT</pubDate>
+      <description>Mazagon Dock Shipbuilders is expected to report flat Q2 2027 revenue of around Rs 2,950 cr, supported by frigate, destroyer and ONGC orders.</description>
+    </item>
     <item>
       <title>Adani Power to invest Rs 48000 crore in Assam power project</title>
       <link>https://www.financialexpress.com/business/news/adani-power-to-invest-rs-48000-crore-in-assam-power-project/4343495/</link>
       <guid>https://www.financialexpress.com/business/news/adani-power-to-invest-rs-48000-crore-in-assam-power-project/4343495/</guid>
-      <description>Assam CM Himanta Biswa Sarma laid the foundation stone for Adani Power’s ₹48,000-crore, 3,200 MW ultra-supercritical thermal power plant in Chapar, generating up to 25,000 direct and indirect jobs.</description>
       <pubDate>Sun, 20 Sep 2026 15:38:26 +0000</pubDate>
+      <description>Assam CM Himanta Biswa Sarma laid the foundation stone for Adani Power’s ₹48,000-crore, 3,200 MW ultra-supercritical thermal power plant in Chapar, generating up to 25,000 direct and indirect jobs.</description>
     </item>
     <item>
       <title>AI forces IT firms to rethink cybersecurity</title>
       <link>https://www.financialexpress.com/business/news/ai-forces-it-firms-to-rethink-cybersecurity/4343484/</link>
       <guid>https://www.financialexpress.com/business/news/ai-forces-it-firms-to-rethink-cybersecurity/4343484/</guid>
-      <description>Following recent data breaches, top Indian IT firms are broadening Zero Trust frameworks to secure AI applications, agents, and APIs against prompt injection and accidental leaks.</description>
       <pubDate>Sun, 20 Sep 2026 15:05:29 +0000</pubDate>
+      <description>Following recent data breaches, top Indian IT firms are broadening Zero Trust frameworks to secure AI applications, agents, and APIs against prompt injection and accidental leaks.</description>
     </item>
     <item>
       <title>Florida bans undocumented students from CTE programmes: What the new rule means</title>
       <link>https://www.financialexpress.com/immigration/florida-bans-undocumented-students-from-cte-programmes-what-the-new-rule-means/4343339/</link>
       <guid>https://www.financialexpress.com/immigration/florida-bans-undocumented-students-from-cte-programmes-what-the-new-rule-means/4343339/</guid>
-      <description>The Florida Board of Education banned undocumented students from career and technical education programs, extending restrictions following the block on undocumented enrollment in state universities. This impacts thousands of immigrant students.</description>
       <pubDate>Sun, 20 Sep 2026 14:42:44 +0000</pubDate>
+      <description>The Florida Board of Education banned undocumented students from career and technical education programs, extending restrictions following the block on undocumented enrollment in state universities. This impacts thousands of immigrant students.</description>
     </item>
     <item>
       <title>Tata Trusts step up battle as legal heavyweights join</title>
       <link>https://www.financialexpress.com/business/news/tata-trusts-step-up-battle-as-legal-heavyweights-join/4343470/</link>
       <guid>https://www.financialexpress.com/business/news/tata-trusts-step-up-battle-as-legal-heavyweights-join/4343470/</guid>
-      <description>Singhvi: SC defended Tata Sons’ Articles of Association</description>
       <pubDate>Sun, 20 Sep 2026 14:13:02 +0000</pubDate>
+      <description>Singhvi: SC defended Tata Sons’ Articles of Association</description>
     </item>
     <item>
       <title>Kavach 4.0 in Lucknow Division: How Rs 252-crore project will strengthen train safety</title>
       <link>https://www.financialexpress.com/business/railways-kavach-4-0-in-lucknow-division-how-rs-252-crore-project-will-strengthen-train-safety-4343353/</link>
       <guid>https://www.financialexpress.com/business/railways-kavach-4-0-in-lucknow-division-how-rs-252-crore-project-will-strengthen-train-safety-4343353/</guid>
-      <description>Indian Railways to deploy Kavach Version 4.0 across 607.7 route km in Lucknow Division, North Eastern Railway, with Rs 252 crore funding to enhance train safety and prevent signal passing accidents.</description>
       <pubDate>Sun, 20 Sep 2026 14:07:49 +0000</pubDate>
+      <description>Indian Railways to deploy Kavach Version 4.0 across 607.7 route km in Lucknow Division, North Eastern Railway, with Rs 252 crore funding to enhance train safety and prevent signal passing accidents.</description>
     </item>
     <item>
       <title>HFCs seek wider pool of long-term funding</title>
       <link>https://www.financialexpress.com/business/banking-finance/hfcs-seek-wider-pool-of-long-term-funding/4343462/</link>
       <guid>https://www.financialexpress.com/business/banking-finance/hfcs-seek-wider-pool-of-long-term-funding/4343462/</guid>
-      <description>Want greater participation from insurers, pension funds as long-tenure capital remains scarce</description>
       <pubDate>Sun, 20 Sep 2026 13:54:58 +0000</pubDate>
+      <description>Want greater participation from insurers, pension funds as long-tenure capital remains scarce</description>
     </item>
     <item>
       <title>How real is India’s growth?</title>
       <link>https://www.financialexpress.com/opinion/how-real-is-indias-growth/4343458/</link>
       <guid>https://www.financialexpress.com/opinion/how-real-is-indias-growth/4343458/</guid>
-      <description>Some of the concerns have come about from a lack of transparency with respect to methods and the raw data, but it does seem India is growing fast</description>
       <pubDate>Sun, 20 Sep 2026 13:41:41 +0000</pubDate>
+      <description>Some of the concerns have come about from a lack of transparency with respect to methods and the raw data, but it does seem India is growing fast</description>
     </item>
     <item>
       <title>Wanted: fresher; 3 years’ experience essential</title>
       <link>https://www.financialexpress.com/opinion/wanted-fresher-3-years-experience-essential/4343446/</link>
       <guid>https://www.financialexpress.com/opinion/wanted-fresher-3-years-experience-essential/4343446/</guid>
-      <description>Indian IT’s “experience creep” is quietly requiring fresh engineering graduates to have years of project experience as AI replaces traditional entry-level work and bench roles.</description>
       <pubDate>Sun, 20 Sep 2026 13:32:16 +0000</pubDate>
+      <description>Indian IT’s “experience creep” is quietly requiring fresh engineering graduates to have years of project experience as AI replaces traditional entry-level work and bench roles.</description>
     </item>
     <item>
       <title>Delhi is outside global top 100 today, but its GDP could surge by $1.8T by 2050: Report</title>
       <link>https://www.financialexpress.com/policy/economy/delhi-is-outside-global-top-100-today-but-its-gdp-could-surge-by-1-8t-by-2050-report/4343401/</link>
       <guid>https://www.financialexpress.com/policy/economy/delhi-is-outside-global-top-100-today-but-its-gdp-could-surge-by-1-8t-by-2050-report/4343401/</guid>
-      <description>Delhi is poised to become a global economic powerhouse by 2050, adding $1.8 trillion in GDP alongside the rise of Bengaluru and other Indian cities transforming the urban economic landscape.</description>
       <pubDate>Sun, 20 Sep 2026 13:21:05 +0000</pubDate>
+      <description>Delhi is poised to become a global economic powerhouse by 2050, adding $1.8 trillion in GDP alongside the rise of Bengaluru and other Indian cities transforming the urban economic landscape.</description>
     </item>
     <item>
       <title>India’s defence production hits Rs 1.78 lakh crore: Who stands to gain from the boom?</title>
       <link>https://www.financialexpress.com/business/defence/indias-defence-production-hits-rs-1-78-lakh-crore-who-stands-to-gain-from-the-boom/4343439/</link>
       <guid>https://www.financialexpress.com/business/defence/indias-defence-production-hits-rs-1-78-lakh-crore-who-stands-to-gain-from-the-boom/4343439/</guid>
-      <description>India exported defence equipment worth Rs 38,424 crore in FY2025-26, according to the Ministry of Defence.</description>
       <pubDate>Sun, 20 Sep 2026 13:17:25 +0000</pubDate>
+      <description>India exported defence equipment worth Rs 38,424 crore in FY2025-26, according to the Ministry of Defence.</description>
     </item>
     <item>
       <title>Mend the guarantor process</title>
       <link>https://www.financialexpress.com/opinion/mend-the-guarantor-process/4343438/</link>
       <guid>https://www.financialexpress.com/opinion/mend-the-guarantor-process/4343438/</guid>
-      <description>Design issues in personal guarantor insolvency proceedings demand reforms</description>
       <pubDate>Sun, 20 Sep 2026 13:10:12 +0000</pubDate>
+      <description>Design issues in personal guarantor insolvency proceedings demand reforms</description>
     </item>
     <item>
       <title>Tariff shock, again</title>
       <link>https://www.financialexpress.com/opinion/tariff-shock-again/4343428/</link>
       <guid>https://www.financialexpress.com/opinion/tariff-shock-again/4343428/</guid>
-      <description>Prospective duties for buying Russian oil make the Indo-US trade deal elusive</description>
       <pubDate>Sun, 20 Sep 2026 13:01:31 +0000</pubDate>
+      <description>Prospective duties for buying Russian oil make the Indo-US trade deal elusive</description>
     </item>
     <item>
       <title>‘New series GDP estimates are likely to be significantly more stable’: Saurabh Garg, Secretary at MoSPI</title>
       <link>https://www.financialexpress.com/policy/economy/new-series-gdp-estimates-are-likely-to-be-significantly-more-stable-saurabh-garg-secretary-at-mospi/4343423/</link>
       <guid>https://www.financialexpress.com/policy/economy/new-series-gdp-estimates-are-likely-to-be-significantly-more-stable-saurabh-garg-secretary-at-mospi/4343423/</guid>
-      <description>MoSPI Secretary Saurabh Garg addresses criticism regarding India’s revised GDP base series, explaining the adoption of double deflation, input-price mapping via Output PPI, and plans for releasing back-series data by late 2026.</description>
       <pubDate>Sun, 20 Sep 2026 12:54:12 +0000</pubDate>
+      <description>MoSPI Secretary Saurabh Garg addresses criticism regarding India’s revised GDP base series, explaining the adoption of double deflation, input-price mapping via Output PPI, and plans for releasing back-series data by late 2026.</description>
     </item>
     <item>
       <title>Nabard-backed agri-fintech onboards over 300,000 Kisan credit cards</title>
       <link>https://www.financialexpress.com/policy/economy/nabard-backed-agri-fintech-onboards-over-300000-kisan-credit-cards/4343415/</link>
       <guid>https://www.financialexpress.com/policy/economy/nabard-backed-agri-fintech-onboards-over-300000-kisan-credit-cards/4343415/</guid>
-      <description>NABARD and 24X7 Moneyworks have onboarded over 300,000 Kisan Credit Card (KCC) applications via an eKCC portal, streamlining agricultural loans and eliminating long bank queues for farmers.</description>
       <pubDate>Sun, 20 Sep 2026 12:32:37 +0000</pubDate>
+      <description>NABARD and 24X7 Moneyworks have onboarded over 300,000 Kisan Credit Card (KCC) applications via an eKCC portal, streamlining agricultural loans and eliminating long bank queues for farmers.</description>
     </item>
     <item>
       <title>India’s exports to core BRICS surge 34% as trade ties get stronger</title>
       <link>https://www.financialexpress.com/policy/economy/indias-exports-to-core-brics-surge-34-as-trade-ties-get-stronger/4343410/</link>
       <guid>https://www.financialexpress.com/policy/economy/indias-exports-to-core-brics-surge-34-as-trade-ties-get-stronger/4343410/</guid>
-      <description>India’s exports to core BRICS economies—Brazil, Russia, China, and South Africa—surged 34% to $19.9 billion in April-August, outpacing the expanded 11-member bloc.</description>
       <pubDate>Sun, 20 Sep 2026 12:23:16 +0000</pubDate>
+      <description>India’s exports to core BRICS economies—Brazil, Russia, China, and South Africa—surged 34% to $19.9 billion in April-August, outpacing the expanded 11-member bloc.</description>
     </item>
     <item>
       <title>Record buffer may help prevent spike in pulse prices</title>
       <link>https://www.financialexpress.com/policy/economy/record-buffer-may-help-prevent-spike-in-pulse-prices/4343403/</link>
       <guid>https://www.financialexpress.com/policy/economy/record-buffer-may-help-prevent-spike-in-pulse-prices/4343403/</guid>
-      <description>India’s pulses buffer stock hits a record 4.5 million tonnes, exceeding the 3.5 MT norm. The government plans calibrated market releases to manage retail prices amid Kharif crop risks.</description>
       <pubDate>Sun, 20 Sep 2026 12:14:42 +0000</pubDate>
+      <description>India’s pulses buffer stock hits a record 4.5 million tonnes, exceeding the 3.5 MT norm. The government plans calibrated market releases to manage retail prices amid Kharif crop risks.</description>
     </item>
     <item>
       <title>Few takers for microfinance credit guarantee scheme</title>
       <link>https://www.financialexpress.com/business/banking-finance/few-takers-for-microfinance-credit-guarantee-scheme/4343396/</link>
       <guid>https://www.financialexpress.com/business/banking-finance/few-takers-for-microfinance-credit-guarantee-scheme/4343396/</guid>
-      <description>The Credit Guarantee Scheme for Microfinance Institutions fell far short of its ₹20,000 crore target, sanctioning only ₹8,500 crore as high fees and risk-averse banks stymied uptake.</description>
       <pubDate>Sun, 20 Sep 2026 12:00:29 +0000</pubDate>
+      <description>The Credit Guarantee Scheme for Microfinance Institutions fell far short of its ₹20,000 crore target, sanctioning only ₹8,500 crore as high fees and risk-averse banks stymied uptake.</description>
     </item>
     <item>
       <title>ICAI mandates peer review for PSB branch auditors</title>
       <link>https://www.financialexpress.com/business/news/icai-mandates-peer-review-for-psb-branch-auditors/4343390/</link>
       <guid>https://www.financialexpress.com/business/news/icai-mandates-peer-review-for-psb-branch-auditors/4343390/</guid>
-      <description>Targets 1-year disposal of disciplinary cases</description>
       <pubDate>Sun, 20 Sep 2026 11:52:08 +0000</pubDate>
+      <description>Targets 1-year disposal of disciplinary cases</description>
     </item>
     <item>
       <title>‘Taking sledgehammer to crack a nut’: Tata Trusts’ full statement on Chandra’s reappointment</title>
       <link>https://www.financialexpress.com/business/news/casting-vote-cannot-revive-chandrasekaran-resolution-say-tata-trusts-full-statement/4343385/</link>
       <guid>https://www.financialexpress.com/business/news/casting-vote-cannot-revive-chandrasekaran-resolution-say-tata-trusts-full-statement/4343385/</guid>
-      <description>Tata Trusts challenges the validity of N. Chandrasekaran’s reappointment as Tata Sons chairman, arguing the resolution failed due to lack of majority support from Trust-nominated directors as per the Articles of Association.</description>
       <pubDate>Sun, 20 Sep 2026 11:47:50 +0000</pubDate>
+      <description>Tata Trusts challenges the validity of N. Chandrasekaran’s reappointment as Tata Sons chairman, arguing the resolution failed due to lack of majority support from Trust-nominated directors as per the Articles of Association.</description>
     </item>
     <item>
       <title>Explainer: What India’s export data and import basket suggest</title>
       <link>https://www.financialexpress.com/policy/economy/explainer-what-indias-export-data-and-import-basket-suggest/4343382/</link>
       <guid>https://www.financialexpress.com/policy/economy/explainer-what-indias-export-data-and-import-basket-suggest/4343382/</guid>
-      <description>India’s merchandise exports jumped 26% in August FY27, led by electronics and engineering. While the import bill is also rising, key capital goods are boosting domestic manufacturing and long-term productive capacity.</description>
       <pubDate>Sun, 20 Sep 2026 11:41:19 +0000</pubDate>
+      <description>India’s merchandise exports jumped 26% in August FY27, led by electronics and engineering. While the import bill is also rising, key capital goods are boosting domestic manufacturing and long-term productive capacity.</description>
     </item>
     <item>
       <title>Tata Trusts reject casting vote for Chandra’s reappointment, call resolution invalid</title>
       <link>https://www.financialexpress.com/business/news/tata-trusts-reject-casting-vote-for-chandras-reappointment-call-resolution-invalid/4343243/</link>
       <guid>https://www.financialexpress.com/business/news/tata-trusts-reject-casting-vote-for-chandras-reappointment-call-resolution-invalid/4343243/</guid>
-      <description>Tata Trusts challenged the use of a casting vote to validate N Chandrasekaran’s reappointment as Tata Sons chairman, citing lack of mandatory support from nominee directors and deeming the resolution legally void.</description>
       <pubDate>Sun, 20 Sep 2026 11:15:12 +0000</pubDate>
+      <description>Tata Trusts challenged the use of a casting vote to validate N Chandrasekaran’s reappointment as Tata Sons chairman, citing lack of mandatory support from nominee directors and deeming the resolution legally void.</description>
     </item>
     <item>
       <title>AI antitrust lawsuit: Anthropic, OpenAI, xAI, Google accused of colluding to slow development</title>
       <link>https://www.financialexpress.com/world-news/us-news/ai-antitrust-lawsuit-anthropic-openai-xai-google-accused-of-colluding-to-slow-development/4343364/</link>
       <guid>https://www.financialexpress.com/world-news/us-news/ai-antitrust-lawsuit-anthropic-openai-xai-google-accused-of-colluding-to-slow-development/4343364/</guid>
-      <description>A lawsuit accuses Anthropic, OpenAI, xAI, and Google of illegally coordinating to slow AI development, alleging antitrust violations that limit competition and harm paid AI subscribers.</description>
       <pubDate>Sun, 20 Sep 2026 10:55:25 +0000</pubDate>
+      <description>A lawsuit accuses Anthropic, OpenAI, xAI, and Google of illegally coordinating to slow AI development, alleging antitrust violations that limit competition and harm paid AI subscribers.</description>
     </item>
     <item>
       <title>Where America’s richest billionaires live: These 5 states dominate Forbes 400 list</title>
       <link>https://www.financialexpress.com/world-news/us-news/where-americas-richest-billionaires-live-these-5-states-dominate-forbes-400-list/4343356/</link>
       <guid>https://www.financialexpress.com/world-news/us-news/where-americas-richest-billionaires-live-these-5-states-dominate-forbes-400-list/4343356/</guid>
-      <description>California leads with 85 billionaires in the Forbes 400, followed by New York, Florida, Texas, and Illinois, highlighting a significant concentration of America’s billionaire wealth in just five states.</description>
       <pubDate>Sun, 20 Sep 2026 10:39:35 +0000</pubDate>
+      <description>California leads with 85 billionaires in the Forbes 400, followed by New York, Florida, Texas, and Illinois, highlighting a significant concentration of America’s billionaire wealth in just five states.</description>
     </item>
     <item>
       <title>Trump’s approval falls to 37% as inflation and Iran conflict weigh on midterm outlook: Report</title>
       <link>https://www.financialexpress.com/world-news/us-news/trumps-approval-falls-to-37-as-inflation-and-iran-conflict-weigh-on-midterm-outlook-report/4343344/</link>
       <guid>https://www.financialexpress.com/world-news/us-news/trumps-approval-falls-to-37-as-inflation-and-iran-conflict-weigh-on-midterm-outlook-report/4343344/</guid>
-      <description>President Donald Trump’s approval rating drops to the weakest point of his second term, with decreased support among conservatives and independents as economic concerns and foreign policy issues impact voter sentiment ahead of the midterm elections.</description>
       <pubDate>Sun, 20 Sep 2026 10:13:16 +0000</pubDate>
+      <description>President Donald Trump’s approval rating drops to the weakest point of his second term, with decreased support among conservatives and independents as economic concerns and foreign policy issues impact voter sentiment ahead of the midterm elections.</description>
     </item>
     <item>
       <title>Railways clears Rs 133-cr four-lane road over bridge to replace level crossing in Gujarat</title>
       <link>https://www.financialexpress.com/business/railways-railways-clears-rs-133-cr-four-lane-road-over-bridge-to-replace-level-crossing-in-gujarat-4343338/</link>
       <guid>https://www.financialexpress.com/business/railways-railways-clears-rs-133-cr-four-lane-road-over-bridge-to-replace-level-crossing-in-gujarat-4343338/</guid>
-      <description>Indian Railways to upgrade Western Railway’s Udhna-Ukai Songadh section with a Rs 133 crore four-lane Road Over Bridge replacing Level Crossing No.53 for smoother traffic and safer rail operations.</description>
       <pubDate>Sun, 20 Sep 2026 10:04:16 +0000</pubDate>
+      <description>Indian Railways to upgrade Western Railway’s Udhna-Ukai Songadh section with a Rs 133 crore four-lane Road Over Bridge replacing Level Crossing No.53 for smoother traffic and safer rail operations.</description>
     </item>
     <item>
       <title>U’khand transfers Rs 18 cr to 10,709 construction worker families ahead of festival season</title>
       <link>https://www.financialexpress.com/india-news/uttarakhand-government-transfers-rs-18-crore-to-10709-construction-worker-families-ahead-of-festival-season/4343302/</link>
       <guid>https://www.financialexpress.com/india-news/uttarakhand-government-transfers-rs-18-crore-to-10709-construction-worker-families-ahead-of-festival-season/4343302/</guid>
-      <description>Uttarakhand CM Pushkar Singh Dhami oversaw the transfer, calling it a festive gift for construction workers.</description>
       <pubDate>Sun, 20 Sep 2026 09:02:37 +0000</pubDate>
+      <description>Uttarakhand CM Pushkar Singh Dhami oversaw the transfer, calling it a festive gift for construction workers.</description>
     </item>
     <item>
       <title>Train runs 8 hours 48 minutes late, Railways told to pay Rs 35,000 to passenger</title>
       <link>https://www.financialexpress.com/legal/train-runs-8-hours-48-minutes-late-railways-told-to-pay-rs-35000-to-passenger/4343320/</link>
       <guid>https://www.financialexpress.com/legal/train-runs-8-hours-48-minutes-late-railways-told-to-pay-rs-35000-to-passenger/4343320/</guid>
-      <description>The train allegedly ran behind schedule. It eventually reached Sambalpur after a delay of 528 minutes, or 8 hours and 48 minutes.</description>
       <pubDate>Sun, 20 Sep 2026 08:29:11 +0000</pubDate>
+      <description>The train allegedly ran behind schedule. It eventually reached Sambalpur after a delay of 528 minutes, or 8 hours and 48 minutes.</description>
     </item>
     <item>
       <title>Railway safety push: What is Electronic Interlocking and which 7 Solapur stations will get it?</title>
       <link>https://www.financialexpress.com/business/railways-railway-safety-push-what-is-electronic-interlocking-and-which-7-solapur-stations-will-get-it-4343308/</link>
       <guid>https://www.financialexpress.com/business/railways-railway-safety-push-what-is-electronic-interlocking-and-which-7-solapur-stations-will-get-it-4343308/</guid>
-      <description>Indian Railways approves a Rs 209 crore Electronic Interlocking project at seven Solapur Division stations to modernize signalling and enhance railway safety infrastructure.</description>
       <pubDate>Sun, 20 Sep 2026 08:14:43 +0000</pubDate>
+      <description>Indian Railways approves a Rs 209 crore Electronic Interlocking project at seven Solapur Division stations to modernize signalling and enhance railway safety infrastructure.</description>
     </item>
     <item>
       <title>From ‘hoax’ to ‘AI Force’: Has Trump changed his mind on AI guardrails?</title>
       <link>https://www.financialexpress.com/world-news/us-news/from-hoax-to-ai-force-has-trump-changed-his-mind-on-ai-guardrails/4343242/</link>
       <guid>https://www.financialexpress.com/world-news/us-news/from-hoax-to-ai-force-has-trump-changed-his-mind-on-ai-guardrails/4343242/</guid>
-      <description>US President Donald Trump announced plans to create an “AI Force” and appoint a new AI czar while opposing any slowdown in AI development, emphasizing tech dominance amid US-China rivalry.</description>
       <pubDate>Sun, 20 Sep 2026 08:09:58 +0000</pubDate>
+      <description>US President Donald Trump announced plans to create an “AI Force” and appoint a new AI czar while opposing any slowdown in AI development, emphasizing tech dominance amid US-China rivalry.</description>
     </item>
     <item>
       <title>From blue economy to AI: K’taka announces Rs 1,420 cr twin policies to drive investment, jobs</title>
       <link>https://www.financialexpress.com/business/industry-karnataka-announces-rs-1420-crore-twin-policies-to-drive-investment-jobs-blue-economy-ai-infrastructure-data-centre-marine-biotech-4343267/</link>
       <guid>https://www.financialexpress.com/business/industry-karnataka-announces-rs-1420-crore-twin-policies-to-drive-investment-jobs-blue-economy-ai-infrastructure-data-centre-marine-biotech-4343267/</guid>
-      <description>Karnataka aims to turn its 340-km coastline and marine biodiversity into high-value products, companies and intellectual property.</description>
       <pubDate>Sun, 20 Sep 2026 07:49:15 +0000</pubDate>
+      <description>Karnataka aims to turn its 340-km coastline and marine biodiversity into high-value products, companies and intellectual property.</description>
     </item>
   </channel>
 </rss>
