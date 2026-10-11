@@ -9,6 +9,13 @@ WORKER_URL = "https://quiet-salad-e40e.vinay-garg03.workers.dev/"
 FEED_FILE = "feed.xml"
 MAX_ITEMS = 500
 
+def clean_text(value):
+    if value is None:
+        return ""
+    if isinstance(value, dict):
+        return str(value.get("rendered", value.get("text", str(value))))
+    return str(value).strip()
+
 def parse_existing_feed():
     items = []
     if not os.path.exists(FEED_FILE):
@@ -20,32 +27,28 @@ def parse_existing_feed():
         if channel is None:
             return items
         for item in channel.findall("item"):
-            title = item.findtext("title", "")
-            link = item.findtext("link", "")
-            guid = item.findtext("guid", link)
-            pub_date = item.findtext("pubDate", "")
-            description = item.findtext("description", "")
+            link = clean_text(item.findtext("link", ""))
             if link:
                 items.append({
-                    "title": title,
+                    "title": clean_text(item.findtext("title", "")),
                     "link": link,
-                    "guid": guid,
-                    "pubDate": pub_date,
-                    "description": description
+                    "guid": clean_text(item.findtext("guid", link)),
+                    "pubDate": clean_text(item.findtext("pubDate", "")),
+                    "description": clean_text(item.findtext("description", ""))
                 })
     except Exception as e:
-        print(f"Notice: Could not parse existing feed.xml: {e}")
+        print(f"Notice: Could not parse existing feed: {e}")
     return items
 
 def main():
     ts = int(time.time())
     request_url = f"{WORKER_URL}?t={ts}"
-    print(f"Fetching live articles: {request_url}")
+    print(f"Fetching: {request_url}")
 
     headers = {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
     }
-    
+
     try:
         res = requests.get(request_url, headers=headers, timeout=25)
         res.raise_for_status()
@@ -55,38 +58,36 @@ def main():
         return
 
     if not isinstance(posts, list) or len(posts) == 0:
-        print("No new posts returned.")
+        print("No articles returned.")
         return
 
     existing_items = parse_existing_feed()
     seen_links = set()
     combined_items = []
 
-    # Add freshly fetched articles
     for post in posts:
-        link = post.get("link", "").strip()
+        link = clean_text(post.get("link", ""))
         if not link or link in seen_links:
             continue
         seen_links.add(link)
+
+        raw_desc = post.get("description", post.get("summary", ""))
         combined_items.append({
-            "title": post.get("title", ""),
+            "title": clean_text(post.get("title", "")),
             "link": link,
             "guid": link,
             "pubDate": formatdate(time.time(), usegmt=True),
-            "description": post.get("description", post.get("summary", ""))
+            "description": clean_text(raw_desc)
         })
 
-    # Append older preserved articles from previous runs
     for item in existing_items:
         link = item.get("link", "")
         if link and link not in seen_links:
             seen_links.add(link)
             combined_items.append(item)
 
-    # Trim to maximum rolling backlog of 500
     trimmed_items = combined_items[:MAX_ITEMS]
 
-    # Generate standard RSS XML
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
     ET.SubElement(channel, "title").text = "Financial Express Live"
@@ -96,12 +97,12 @@ def main():
 
     for item_data in trimmed_items:
         item = ET.SubElement(channel, "item")
-        ET.SubElement(item, "title").text = item_data["title"]
-        ET.SubElement(item, "link").text = item_data["link"]
+        ET.SubElement(item, "title").text = clean_text(item_data["title"])
+        ET.SubElement(item, "link").text = clean_text(item_data["link"])
         guid = ET.SubElement(item, "guid")
-        guid.text = item_data["guid"]
-        ET.SubElement(item, "pubDate").text = item_data["pubDate"]
-        ET.SubElement(item, "description").text = item_data["description"]
+        guid.text = clean_text(item_data["guid"])
+        ET.SubElement(item, "pubDate").text = clean_text(item_data["pubDate"])
+        ET.SubElement(item, "description").text = clean_text(item_data["description"])
 
     xml_str = ET.tostring(rss, encoding="utf-8")
     pretty_xml = minidom.parseString(xml_str).toprettyxml(indent="  ", encoding="utf-8")
@@ -109,7 +110,7 @@ def main():
     with open(FEED_FILE, "wb") as f:
         f.write(pretty_xml)
 
-    print(f"Successfully updated {FEED_FILE} with {len(trimmed_items)} articles.")
+    print(f"Success: Updated {FEED_FILE} with {len(trimmed_items)} articles.")
 
 if __name__ == "__main__":
     main()
