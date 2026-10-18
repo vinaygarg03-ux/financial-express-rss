@@ -7,6 +7,11 @@ from email.utils import formatdate
 
 SECTIONS = [
     {
+        'tag': 'Auto News',
+        'url': 'https://www.financialexpress.com/auto/news/',
+        'path_filter': '/auto/news/'
+    },
+    {
         'tag': 'Review',
         'url': 'https://www.financialexpress.com/auto/reviews/',
         'path_filter': '/auto/reviews/'
