@@ -1,4 +1,5 @@
 import os, re, time, requests, html
+from datetime import datetime
 from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
@@ -35,6 +36,15 @@ def clean_text(text):
     clean = re.sub(r'<[^>]+>', '', str(text))
     return html.unescape(clean).strip()
 
+def parse_iso_date(dt_str):
+    if not dt_str:
+        return time.time()
+    try:
+        dt = datetime.fromisoformat(dt_str)
+        return dt.timestamp()
+    except Exception:
+        return time.time()
+
 def parse_existing_feed():
     items = []
     if not os.path.exists(FEED_FILE):
@@ -48,11 +58,19 @@ def parse_existing_feed():
         for item in channel.findall('item'):
             link = clean_text(item.findtext('link', ''))
             if link:
+                pub_text = clean_text(item.findtext('pubDate', ''))
+                epoch = time.time()
+                try:
+                    import email.utils
+                    epoch = email.utils.mktime_tz(email.utils.parsedate_tz(pub_text))
+                except Exception:
+                    pass
                 items.append({
                     'title': clean_text(item.findtext('title', '')),
                     'link': link,
                     'guid': clean_text(item.findtext('guid', link)),
-                    'pubDate': clean_text(item.findtext('pubDate', '')),
+                    'pubDate': pub_text,
+                    'epoch': epoch,
                     'description': clean_text(item.findtext('description', ''))
                 })
     except Exception as e:
@@ -76,33 +94,42 @@ def scrape_section(sec_info):
     soup = BeautifulSoup(res.text, 'html.parser')
     seen = set()
 
-    for a in soup.find_all('a', href=True):
-        href = a['href'].strip()
+    for art in soup.find_all('article'):
+        title_box = art.find('div', class_='entry-title')
+        if not title_box:
+            continue
+        a_tag = title_box.find('a', href=True)
+        if not a_tag:
+            continue
+
+        href = a_tag['href'].strip()
         if path_filter not in href:
             continue
         clean_url = href.split('?')[0].rstrip('/')
-        if clean_url in ['https://www.financialexpress.com' + path_filter.rstrip('/'), 'http://www.financialexpress.com' + path_filter.rstrip('/')]:
-            continue
-        if '/photos/' in clean_url or '/page/' in clean_url or clean_url in seen:
+        if clean_url in seen:
             continue
 
-        title = clean_text(a.get_text())
-        if not title or len(title) < 20 or 'PHOTOS' in title:
+        title = clean_text(a_tag.get_text())
+        if not title or len(title) < 15:
             continue
+
+        time_tag = art.find('time')
+        epoch_val = time.time()
+        if time_tag and time_tag.get('datetime'):
+            epoch_val = parse_iso_date(time_tag['datetime'])
 
         desc = title
-        parent = a.find_parent(['article', 'li', 'div'])
-        if parent:
-            p_elem = parent.find(['p', 'span'])
-            if p_elem and p_elem.get_text().strip() != title:
-                desc = clean_text(p_elem.get_text())
+        p_desc = art.find('p')
+        if p_desc and p_desc.get_text().strip() != title:
+            desc = clean_text(p_desc.get_text())
 
         seen.add(clean_url)
         articles.append({
             'title': f'[{tag}] {title}',
             'link': clean_url,
             'guid': clean_url,
-            'pubDate': formatdate(time.time(), usegmt=True),
+            'epoch': epoch_val,
+            'pubDate': formatdate(epoch_val, usegmt=True),
             'description': desc
         })
 
@@ -115,25 +142,20 @@ def main():
         sec_items = scrape_section(sec)
         fresh_items.extend(sec_items)
 
-    print(f'Total fresh automotive articles: {len(fresh_items)}')
+    print(f'Total fresh articles: {len(fresh_items)}')
     if not fresh_items:
         return
 
-    existing = parse_existing_feed()
-    combined = []
-    final_seen = set()
+    # Clear existing feed on local disk to flush identical timestamps
+    if os.path.exists(FEED_FILE):
+        try:
+            os.remove(FEED_FILE)
+        except Exception:
+            pass
 
-    for it in fresh_items:
-        if it['link'] not in final_seen:
-            final_seen.add(it['link'])
-            combined.append(it)
-
-    for it in existing:
-        if it['link'] not in final_seen:
-            final_seen.add(it['link'])
-            combined.append(it)
-
-    trimmed = combined[:MAX_ITEMS]
+    # Sort strictly by real publication timestamp (newest first)
+    fresh_items.sort(key=lambda x: x.get('epoch', 0), reverse=True)
+    trimmed = fresh_items[:MAX_ITEMS]
 
     rss = ET.Element('rss', version='2.0')
     channel = ET.SubElement(rss, 'channel')
@@ -157,7 +179,7 @@ def main():
     with open(FEED_FILE, 'wb') as f:
         f.write(pretty_xml)
 
-    print(f'Success: Updated {FEED_FILE} with {len(trimmed)} total articles.')
+    print(f'Success: Updated {FEED_FILE} with {len(trimmed)} chronologically sorted articles.')
 
 if __name__ == '__main__':
     main()
